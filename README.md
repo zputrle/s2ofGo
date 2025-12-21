@@ -1,9 +1,3 @@
-# A Tour of Go in one Web Page 
-
-[A Tour of Go](https://go.dev/tour/welcome/1) as a single web page to easily find what you want to recall.
-
----
-
 # Welcome!
 
 **Learn how to use this tour: including how to navigate the different lessons and how to run code.**
