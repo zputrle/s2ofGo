@@ -1,6 +1,6 @@
-# A Tour of Go as a Single Web Page 
+# A Tour of Go in one Web Page 
 
-A [A Tour of Go](https://go.dev/tour/welcome/1) as a single webpage for search through
+[A Tour of Go](https://go.dev/tour/welcome/1) as a single web page to easily find what you want to recall.
 
 ---
 
@@ -3313,3 +3313,4 @@ The [First Class Functions in Go](/doc/codewalk/functions/) codewalk gives an in
 The [Go Blog](/blog/) has a large archive of informative Go articles.
 
 Visit [the Go home page](/) for more.
+
