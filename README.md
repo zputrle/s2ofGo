@@ -44,7 +44,7 @@ by clicking on the syntax button.
 
 When you're ready to move on, click the right arrow below or type the `PageDown` key.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -100,7 +100,7 @@ This program is using the packages with import paths `"fmt"` and `"math/rand"`.
 
 By convention, the package name is the same as the last element of the import path. For instance, the `"math/rand"` package comprises files that begin with the statement `package`rand`.
 
-```.go
+```go
 package main
 
 import (
@@ -120,14 +120,14 @@ This code groups the imports into a parenthesized, "factored" import statement.
 You can also write multiple import statements, like:
 
 
-```
+```go
 import "fmt"
 import "math"
 ```
 
 But it is good style to use the factored import statement.
 
-```.go
+```go
 package main
 
 import (
@@ -155,7 +155,7 @@ Run the code. Notice the error message.
 
 To fix the error, rename `math.pi` to `math.Pi` and try it again.
 
-```.go
+```go
 package main
 
 import (
@@ -178,7 +178,7 @@ Notice that the type comes _after_ the variable name.
 
 (For more about why types look the way they do, see the [article on Go's declaration syntax](/blog/gos-declaration-syntax).)
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -199,18 +199,18 @@ When two or more consecutive named function parameters share a type, you can omi
 In this example, we shortened
 
 
-```
+```go
 x int, y int
 ```
 
 to
 
 
-```
+```go
 x, y int
 ```
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -230,7 +230,7 @@ A function can return any number of results.
 
 The `swap` function returns two strings.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -255,7 +255,7 @@ A `return` statement without arguments returns the named return values. This is 
 
 Naked return statements should be used only in short functions, as with the example shown here. They can harm readability in longer functions.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -277,7 +277,7 @@ The `var` statement declares a list of variables; as in function argument lists,
 
 A `var` statement can be at package or function level. We see both in this example.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -296,7 +296,7 @@ A var declaration can include initializers, one per variable.
 
 If an initializer is present, the type can be omitted; the variable will take the type of the initializer.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -315,7 +315,7 @@ Inside a function, the `:=` short assignment statement can be used in place of a
 
 Outside a function, every statement begins with a keyword (`var`, `func`, and so on) and so the `:=` construct is not available.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -334,7 +334,7 @@ func main() {
 Go's basic types are
 
 
-```
+```go
 bool
 
 string
@@ -359,7 +359,7 @@ as with import statements.
 The `int`, `uint`, and `uintptr` types are usually 32 bits wide on 32-bit systems and 64 bits wide on 64-bit systems.
 When you need an integer value you should use `int` unless you have a specific reason to use a sized or unsigned integer type.
 
-```.go
+```go
 package main
 
 import (
@@ -391,7 +391,7 @@ The zero value is:
 - `false` for the boolean type, and
 - `""` (the empty string) for strings.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -412,7 +412,7 @@ The expression `T(v)` converts the value `v` to the type `T`.
 Some numeric conversions:
 
 
-```
+```go
 var i int = 42
 var f float64 = float64(i)
 var u uint = uint(f)
@@ -421,7 +421,7 @@ var u uint = uint(f)
 Or, put more simply:
 
 
-```
+```go
 i := 42
 f := float64(i)
 u := uint(f)
@@ -431,7 +431,7 @@ Unlike in C, in Go assignment between items of different type requires an
 explicit conversion.
 Try removing the `float64` or `uint` conversions in the example and see what happens.
 
-```.go
+```go
 package main
 
 import (
@@ -454,7 +454,7 @@ When declaring a variable without specifying an explicit type (either by using t
 When the right hand side of the declaration is typed, the new variable is of that same type:
 
 
-```
+```go
 var i int
 j := i // j is an int
 ```
@@ -462,7 +462,7 @@ j := i // j is an int
 But when the right hand side contains an untyped numeric constant, the new variable may be an `int`, `float64`, or `complex128` depending on the precision of the constant:
 
 
-```
+```go
 i := 42           // int
 f := 3.142        // float64
 g := 0.867 + 0.5i // complex128
@@ -470,7 +470,7 @@ g := 0.867 + 0.5i // complex128
 
 Try changing the initial value of `v` in the example code and observe how its type is affected.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -489,7 +489,7 @@ Constants can be character, string, boolean, or numeric values.
 
 Constants cannot be declared using the `:=` syntax.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -516,7 +516,7 @@ Try printing `needInt(Big)` too.
 
 (An `int` can store at maximum a 64-bit integer, and sometimes less.)
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -579,7 +579,7 @@ The loop will stop iterating once the boolean condition evaluates to `false`.
 surrounding the three components of the `for` statement and the braces `{`}` are
 always required.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -597,7 +597,7 @@ func main() {
 
 The init and post statements are optional.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -615,7 +615,7 @@ func main() {
 
 At that point you can drop the semicolons: C's `while` is spelled `for` in Go.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -633,7 +633,7 @@ func main() {
 
 If you omit the loop condition it loops forever, so an infinite loop is compactly expressed.
 
-```.go
+```go
 package main
 
 func main() {
@@ -647,7 +647,7 @@ func main() {
 Go's `if` statements are like its `for` loops; the expression need not be
 surrounded by parentheses `(`)` but the braces `{`}` are required.
 
-```.go
+```go
 package main
 
 import (
@@ -675,7 +675,7 @@ Variables declared by the statement are only in scope until the end of the `if`.
 
 (Try using `v` in the last `return` statement.)
 
-```.go
+```go
 package main
 
 import (
@@ -706,7 +706,7 @@ of the `else` blocks.
 (Both calls to `pow` return their results before the call to `fmt.Println`
 in `main` begins.)
 
-```.go
+```go
 package main
 
 import (
@@ -741,7 +741,7 @@ Starting with some guess z, we can adjust z based on how close z² is to x,
 producing a better guess:
 
 
-```
+```go
 z -= (z*z - x) / (2*z)
 ```
 
@@ -758,7 +758,7 @@ Hint: To declare and initialize a floating point value,
 give it floating point syntax or use a conversion:
 
 
-```
+```go
 z := 1.0
 z := float64(1)
 ```
@@ -775,7 +775,7 @@ of z², to scale how much we adjust z by how quickly z² is changing.
 This general approach is called [Newton's method](https://en.wikipedia.org/wiki/Newton%27s_method).
 It works well for many functions but especially well for square root.)
 
-```.go
+```go
 package main
 
 import (
@@ -802,7 +802,7 @@ languages is provided automatically in Go.
 Another important difference is that Go's switch cases need not
 be constants, and the values involved need not be integers.
 
-```.go
+```go
 package main
 
 import (
@@ -832,7 +832,7 @@ Switch cases evaluate cases from top to bottom, stopping when a case succeeds.
 (For example,
 
 
-```
+```go
 switch i {
 case 0:
 case f():
@@ -841,7 +841,7 @@ case f():
 
 does not call `f` if `i==0`.)
 
-```.go
+```go
 package main
 
 import (
@@ -871,7 +871,7 @@ Switch without a condition is the same as `switch`true`.
 
 This construct can be a clean way to write long if-then-else chains.
 
-```.go
+```go
 package main
 
 import (
@@ -900,7 +900,7 @@ function returns.
 The deferred call's arguments are evaluated immediately, but the function call
 is not executed until the surrounding function returns.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -920,7 +920,7 @@ deferred calls are executed in last-in-first-out order.
 To learn more about defer statements read this
 [blog post](/blog/defer-panic-and-recover).
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -962,14 +962,14 @@ A pointer holds the memory address of a value.
 The type `*T` is a pointer to a `T` value. Its zero value is `nil`.
 
 
-```
+```go
 var p *int
 ```
 
 The `&` operator generates a pointer to its operand.
 
 
-```
+```go
 i := 42
 p = &i
 ```
@@ -977,7 +977,7 @@ p = &i
 The `*` operator denotes the pointer's underlying value.
 
 
-```
+```go
 fmt.Println(*p) // read i through the pointer p
 *p = 21         // set i through the pointer p
 ```
@@ -986,7 +986,7 @@ This is known as "dereferencing" or "indirecting".
 
 Unlike C, Go has no pointer arithmetic.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1009,7 +1009,7 @@ func main() {
 
 A `struct` is a collection of fields.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1028,7 +1028,7 @@ func main() {
 
 Struct fields are accessed using a dot.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1054,7 +1054,7 @@ write `(*p).X`.
 However, that notation is cumbersome, so the language permits us instead to
 write just `p.X`, without the explicit dereference.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1080,7 +1080,7 @@ You can list just a subset of fields by using the `Name:` syntax. (And the order
 
 The special prefix `&` returns a pointer to the struct value.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1108,7 +1108,7 @@ The type `[n]T` is an array of `n` values of type `T`.
 The expression
 
 
-```
+```go
 var a [10]int
 ```
 
@@ -1118,7 +1118,7 @@ An array's length is part of its type, so arrays cannot be resized.
 This seems limiting, but don't worry;
 Go provides a convenient way of working with arrays.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1148,7 +1148,7 @@ A slice is formed by specifying two indices, a low and
 high bound, separated by a colon:
 
 
-```
+```go
 a[low : high]
 ```
 
@@ -1159,11 +1159,11 @@ The following expression creates a slice which includes
 elements 1 through 3 of `a`:
 
 
-```
+```go
 a[1:4]
 ```
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1186,7 +1186,7 @@ corresponding elements of its underlying array.
 
 Other slices that share the same underlying array will see those changes.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1217,7 +1217,7 @@ A slice literal is like an array literal without the length.
 This is an array literal:
 
 
-```
+```go
 [3]bool{true, true, false}
 ```
 
@@ -1225,11 +1225,11 @@ And this creates the same array as above,
 then builds a slice that references it:
 
 
-```
+```go
 []bool{true, true, false}
 ```
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1265,21 +1265,21 @@ The default is zero for the low bound and the length of the slice for the high b
 For the array
 
 
-```
+```go
 var a [10]int
 ```
 
 these slice expressions are equivalent:
 
 
-```
+```go
 a[0:10]
 a[:10]
 a[0:]
 a[:]
 ```
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1315,7 +1315,7 @@ provided it has sufficient capacity.
 Try changing one of the slice operations in the example program to extend it
 beyond its capacity and see what happens.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1349,7 +1349,7 @@ The zero value of a slice is `nil`.
 A nil slice has a length and capacity of 0
 and has no underlying array.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1372,21 +1372,21 @@ The `make` function allocates a zeroed array
 and returns a slice that refers to that array:
 
 
-```
+```go
 a := make([]int, 5)  // len(a)=5
 ```
 
 To specify a capacity, pass a third argument to `make`:
 
 
-```
+```go
 b := make([]int, 0, 5) // len(b)=0, cap(b)=5
 
 b = b[:cap(b)] // len(b)=5, cap(b)=5
 b = b[1:]      // len(b)=4, cap(b)=4
 ```
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1415,7 +1415,7 @@ func printSlice(s string, x []int) {
 
 Slices can contain any type, including other slices.
 
-```.go
+```go
 package main
 
 import (
@@ -1451,7 +1451,7 @@ It is common to append new elements to a slice, and so Go provides a built-in
 of the built-in package describes `append`.
 
 
-```
+```go
 func append(s []T, vs ...T) []T
 ```
 
@@ -1467,7 +1467,7 @@ array.
 
 (To learn more about slices, read the [Slices: usage and internals](/blog/go-slices-usage-and-internals) article.)
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1501,7 +1501,7 @@ The `range` form of the `for` loop iterates over a slice or map.
 When ranging over a slice, two values are returned for each iteration.
 The first is the index, and the second is a copy of the element at that index.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1520,7 +1520,7 @@ func main() {
 You can skip the index or value by assigning to `_`.
 
 
-```
+```go
 for i, _ := range pow
 for _, value := range pow
 ```
@@ -1528,11 +1528,11 @@ for _, value := range pow
 If you only want the index, you can omit the second variable.
 
 
-```
+```go
 for i := range pow
 ```
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1558,7 +1558,7 @@ The choice of image is up to you. Interesting functions include `(x+y)/2`, `x*y`
 
 (Use `uint8(intValue)` to convert between types.)
 
-```.go
+```go
 package main
 
 import "golang.org/x/tour/pic"
@@ -1581,7 +1581,7 @@ A `nil` map has no keys, nor can keys be added.
 The `make` function returns a map of the given type,
 initialized and ready for use.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1605,7 +1605,7 @@ func main() {
 
 Map literals are like struct literals, but the keys are required.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1632,7 +1632,7 @@ func main() {
 
 If the top-level type is just a type name, you can omit it from the elements of the literal.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1656,28 +1656,28 @@ func main() {
 Insert or update an element in map `m`:
 
 
-```
+```go
 m[key] = elem
 ```
 
 Retrieve an element:
 
 
-```
+```go
 elem = m[key]
 ```
 
 Delete an element:
 
 
-```
+```go
 delete(m, key)
 ```
 
 Test that a key is present with a two-value assignment:
 
 
-```
+```go
 elem, ok = m[key]
 ```
 
@@ -1688,11 +1688,11 @@ If `key` is not in the map, then `elem` is the zero value for the map's element 
 *Note:* If `elem` or `ok` have not yet been declared you could use a short declaration form:
 
 
-```
+```go
 elem, ok := m[key]
 ```
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1720,7 +1720,7 @@ Implement `WordCount`.  It should return a map of the counts of each “word” 
 
 You might find [strings.Fields](/pkg/strings/#Fields) helpful.
 
-```.go
+```go
 package main
 
 import (
@@ -1742,7 +1742,7 @@ Functions are values too. They can be passed around just like other values.
 
 Function values may be used as function arguments and return values.
 
-```.go
+```go
 package main
 
 import (
@@ -1771,7 +1771,7 @@ Go functions may be closures. A closure is a function value that references vari
 
 For example, the `adder` function returns a closure. Each closure is bound to its own `sum` variable.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1803,7 +1803,7 @@ Implement a `fibonacci` function that returns a function (a closure) that
 returns successive [fibonacci numbers](https://en.wikipedia.org/wiki/Fibonacci_number)
 (0, 1, 1, 2, 3, 5, ...).
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -1851,7 +1851,7 @@ the method name.
 
 In this example, the `Abs` method has a receiver of type `Vertex` named `v`.
 
-```.go
+```go
 package main
 
 import (
@@ -1879,7 +1879,7 @@ Remember: a method is just a function with a receiver argument.
 
 Here's `Abs` written as a regular function with no change in functionality.
 
-```.go
+```go
 package main
 
 import (
@@ -1912,7 +1912,7 @@ package as the method.
 You cannot declare a method with a receiver whose type is defined in another
 package (which includes the built-in types such as `int`).
 
-```.go
+```go
 package main
 
 import (
@@ -1958,7 +1958,7 @@ With a value receiver, the `Scale` method operates on a copy of the original
 The `Scale` method must have a pointer receiver to change the `Vertex` value
 declared in the `main` function.
 
-```.go
+```go
 package main
 
 import (
@@ -1996,7 +1996,7 @@ What else did you need to change for the example to compile?
 
 (If you're not sure, continue to the next page.)
 
-```.go
+```go
 package main
 
 import (
@@ -2030,7 +2030,7 @@ Comparing the previous two programs, you might notice that
 functions with a pointer argument must take a pointer:
 
 
-```
+```go
 var v Vertex
 ScaleFunc(v, 5)  // Compile error!
 ScaleFunc(&v, 5) // OK
@@ -2040,7 +2040,7 @@ while methods with pointer receivers take either a value or a pointer as the
 receiver when they are called:
 
 
-```
+```go
 var v Vertex
 v.Scale(5)  // OK
 p := &v
@@ -2052,7 +2052,7 @@ the method with the pointer receiver is called automatically.
 That is, as a convenience, Go interprets the statement `v.Scale(5)` as
 `(&v).Scale(5)` since the `Scale` method has a pointer receiver.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -2091,7 +2091,7 @@ The equivalent thing happens in the reverse direction.
 Functions that take a value argument must take a value of that specific type:
 
 
-```
+```go
 var v Vertex
 fmt.Println(AbsFunc(v))  // OK
 fmt.Println(AbsFunc(&v)) // Compile error!
@@ -2101,7 +2101,7 @@ while methods with value receivers take either a value or a pointer as the
 receiver when they are called:
 
 
-```
+```go
 var v Vertex
 fmt.Println(v.Abs()) // OK
 p := &v
@@ -2110,7 +2110,7 @@ fmt.Println(p.Abs()) // OK
 
 In this case, the method call `p.Abs()` is interpreted as `(*p).Abs()`.
 
-```.go
+```go
 package main
 
 import (
@@ -2157,7 +2157,7 @@ In general, all methods on a given type should have either value or pointer
 receivers, but not a mixture of both.
 (We'll see why over the next few pages.)
 
-```.go
+```go
 package main
 
 import (
@@ -2196,7 +2196,7 @@ A value of interface type can hold any value that implements those methods.
 `Vertex` (the value type) doesn't implement `Abser` because
 the `Abs` method is defined only on `*Vertex` (the pointer type).
 
-```.go
+```go
 package main
 
 import (
@@ -2249,7 +2249,7 @@ There is no explicit declaration of intent, no "implements" keyword.
 Implicit interfaces decouple the definition of an interface from its
 implementation, which could then appear in any package without prearrangement.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -2280,7 +2280,7 @@ Under the hood, interface values can be thought of as a tuple of a value and a
 concrete type:
 
 
-```
+```go
 (value, type)
 ```
 
@@ -2289,7 +2289,7 @@ An interface value holds a value of a specific underlying concrete type.
 Calling a method on an interface value executes the method of the same name on
 its underlying type.
 
-```.go
+```go
 package main
 
 import (
@@ -2343,7 +2343,7 @@ with a nil receiver (as with the method `M` in this example.)
 
 Note that an interface value that holds a nil concrete value is itself non-nil.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -2389,7 +2389,7 @@ A nil interface value holds neither value nor concrete type.
 Calling a method on a nil interface is a run-time error because there is no
 type inside the interface tuple to indicate which _concrete_ method to call.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -2414,7 +2414,7 @@ func describe(i I) {
 The interface type that specifies zero methods is known as the _empty_interface_:
 
 
-```
+```go
 interface{}
 ```
 
@@ -2424,7 +2424,7 @@ An empty interface may hold values of any type.
 Empty interfaces are used by code that handles values of unknown type.
 For example, `fmt.Print` takes any number of arguments of type `interface{}`.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -2450,7 +2450,7 @@ func describe(i interface{}) {
 A _type_assertion_ provides access to an interface value's underlying concrete value.
 
 
-```
+```go
 t := i.(T)
 ```
 
@@ -2464,7 +2464,7 @@ a type assertion can return two values: the underlying value
 and a boolean value that reports whether the assertion succeeded.
 
 
-```
+```go
 t, ok := i.(T)
 ```
 
@@ -2475,7 +2475,7 @@ and no panic occurs.
 
 Note the similarity between this syntax and that of reading from a map.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -2506,7 +2506,7 @@ switch specify types (not values), and those values are compared against
 the type of the value held by the given interface value.
 
 
-```
+```go
 switch v := i.(type) {
 case T:
     // here v has type T
@@ -2527,7 +2527,7 @@ In each of the `T` and `S` cases, the variable `v` will be of type
 In the default case (where there is no match), the variable `v` is
 of the same interface type and value as `i`.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -2555,7 +2555,7 @@ func main() {
 One of the most ubiquitous interfaces is [`Stringer`](/pkg/fmt/#Stringer) defined by the [`fmt`](/pkg/fmt/) package.
 
 
-```
+```go
 type Stringer interface {
     String() string
 }
@@ -2564,7 +2564,7 @@ type Stringer interface {
 A `Stringer` is a type that can describe itself as a string. The `fmt` package
 (and many others) look for this interface to print values.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -2592,7 +2592,7 @@ a dotted quad.
 
 For instance, `IPAddr{1,`2,`3,`4}` should print as `"1.2.3.4"`.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -2619,7 +2619,7 @@ Go programs express error state with `error` values.
 The `error` type is a built-in interface similar to `fmt.Stringer`:
 
 
-```
+```go
 type error interface {
     Error() string
 }
@@ -2632,7 +2632,7 @@ Functions often return an `error` value, and calling code should handle errors
 by testing whether the error equals `nil`.
 
 
-```
+```go
 i, err := strconv.Atoi("42")
 if err != nil {
     fmt.Printf("couldn't convert number: %v\n", err)
@@ -2643,7 +2643,7 @@ fmt.Println("Converted integer:", i)
 
 A nil `error` denotes success; a non-nil `error` denotes failure.
 
-```.go
+```go
 package main
 
 import (
@@ -2684,14 +2684,14 @@ Copy your `Sqrt` function from the [earlier exercise](/tour/flowcontrol/8) and m
 Create a new type
 
 
-```
+```go
 type ErrNegativeSqrt float64
 ```
 
 and make it an `error` by giving it a
 
 
-```
+```go
 func (e ErrNegativeSqrt) Error() string
 ```
 
@@ -2701,7 +2701,7 @@ method such that `ErrNegativeSqrt(-2).Error()` returns `"cannot`Sqrt`negative`nu
 
 Change your `Sqrt` function to return an `ErrNegativeSqrt` value when given a negative number.
 
-```.go
+```go
 package main
 
 import (
@@ -2728,7 +2728,7 @@ The Go standard library contains [many implementations](https://cs.opensource.go
 The `io.Reader` interface has a `Read` method:
 
 
-```
+```go
 func (T) Read(b []byte) (n int, err error)
 ```
 
@@ -2740,7 +2740,7 @@ The example code creates a
 [`strings.Reader`](/pkg/strings/#Reader)
 and consumes its output 8 bytes at a time.
 
-```.go
+```go
 package main
 
 import (
@@ -2769,7 +2769,7 @@ func main() {
 Implement a `Reader` type that emits an infinite stream of the ASCII character
 `'A'`.
 
-```.go
+```go
 package main
 
 import "golang.org/x/tour/reader"
@@ -2794,7 +2794,7 @@ Implement a `rot13Reader` that implements `io.Reader` and reads from an `io.Read
 The `rot13Reader` type is provided for you.
 Make it an `io.Reader` by implementing its `Read` method.
 
-```.go
+```go
 package main
 
 import (
@@ -2819,7 +2819,7 @@ func main() {
 [Package image](/pkg/image/#Image) defines the `Image` interface:
 
 
-```
+```go
 package image
 
 type Image interface {
@@ -2837,7 +2837,7 @@ declaration is inside package `image`.
 
 The `color.Color` and `color.Model` types are also interfaces, but we'll ignore that by using the predefined implementations `color.RGBA` and `color.RGBAModel`. These interfaces and types are specified by the [image/color package](/pkg/image/color/).
 
-```.go
+```go
 package main
 
 import (
@@ -2864,7 +2864,7 @@ Define your own `Image` type, implement [the necessary methods](/pkg/image/#Imag
 
 `At` should return a color; the value `v` in the last picture generator corresponds to `color.RGBA{v,`v,`255,`255}` in this one.
 
-```.go
+```go
 package main
 
 import "golang.org/x/tour/pic"
@@ -2902,7 +2902,7 @@ type parameters of a function appear between brackets, before the function's
 arguments.
 
 
-```
+```go
 func Index[T comparable](s []T, x T) int
 ```
 
@@ -2914,7 +2914,7 @@ built-in constraint `comparable`. `x` is also a value of the same type.
 value to all slice elements until a match is found. This `Index` function works
 for any type that supports comparison.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -2953,7 +2953,7 @@ holding any type of value.
 
 As an exercise, add some functionality to this list implementation.
 
-```.go
+```go
 package main
 
 // List represents a singly-linked list that holds
@@ -2990,14 +2990,14 @@ You can go back to the list of [modules](/tour/list) to find what to learn next,
 A _goroutine_ is a lightweight thread managed by the Go runtime.
 
 
-```
+```go
 go f(x, y, z)
 ```
 
 starts a new goroutine running
 
 
-```
+```go
 f(x, y, z)
 ```
 
@@ -3005,7 +3005,7 @@ The evaluation of `f`, `x`, `y`, and `z` happens in the current goroutine and th
 
 Goroutines run in the same address space, so access to shared memory must be synchronized. The [`sync`](/pkg/sync/) package provides useful primitives, although you won't need them much in Go as there are other primitives. (See the next slide.)
 
-```.go
+```go
 package main
 
 import (
@@ -3031,7 +3031,7 @@ func main() {
 Channels are a typed conduit through which you can send and receive values with the channel operator, `<-`.
 
 
-```
+```go
 ch <- v    // Send v to channel ch.
 v := <-ch  // Receive from ch, and
            // assign value to v.
@@ -3042,7 +3042,7 @@ v := <-ch  // Receive from ch, and
 Like maps and slices, channels must be created before use:
 
 
-```
+```go
 ch := make(chan int)
 ```
 
@@ -3051,7 +3051,7 @@ By default, sends and receives block until the other side is ready. This allows 
 The example code sums the numbers in a slice, distributing the work between two goroutines.
 Once both goroutines have completed their computation, it calculates the final result.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -3081,7 +3081,7 @@ func main() {
 Channels can be _buffered_.  Provide the buffer length as the second argument to `make` to initialize a buffered channel:
 
 
-```
+```go
 ch := make(chan int, 100)
 ```
 
@@ -3089,7 +3089,7 @@ Sends to a buffered channel block only when the buffer is full. Receives block w
 
 Modify the example to overfill the buffer and see what happens.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -3108,7 +3108,7 @@ func main() {
 A sender can `close` a channel to indicate that no more values will be sent. Receivers can test whether a channel has been closed by assigning a second parameter to the receive expression: after
 
 
-```
+```go
 v, ok := <-ch
 ```
 
@@ -3120,7 +3120,7 @@ The loop `for`i`:=`range`c` receives values from the channel repeatedly until it
 
 *Another*note:* Channels aren't like files; you don't usually need to close them. Closing is only necessary when the receiver must be told there are no more values coming, such as to terminate a `range` loop.
 
-```.go
+```go
 package main
 
 import (
@@ -3151,7 +3151,7 @@ The `select` statement lets a goroutine wait on multiple communication operation
 
 A `select` blocks until one of its cases can run, then it executes that case.  It chooses one at random if multiple are ready.
 
-```.go
+```go
 package main
 
 import "fmt"
@@ -3189,7 +3189,7 @@ The `default` case in a `select` is run if no other case is ready.
 Use a `default` case to try a send or receive without blocking:
 
 
-```
+```go
 select {
 case i := <-c:
     // use i
@@ -3198,7 +3198,7 @@ default:
 }
 ```
 
-```.go
+```go
 package main
 
 import (
@@ -3237,7 +3237,7 @@ A function to check whether two binary trees store the same sequence is quite co
 This example uses the `tree` package, which defines the type:
 
 
-```
+```go
 type Tree struct {
     Left  *Tree
     Value int
@@ -3258,7 +3258,7 @@ The function `tree.New(k)` constructs a randomly-structured (but always sorted) 
 Create a new channel `ch` and kick off the walker:
 
 
-```
+```go
 go Walk(tree.New(1), ch)
 ```
 
@@ -3272,7 +3272,7 @@ Then read and print 10 values from the channel. It should be the numbers 1, 2, 3
 
 The documentation for `Tree` can be found [here](https://godoc.org/golang.org/x/tour/tree#Tree).
 
-```.go
+```go
 package main
 
 import "golang.org/x/tour/tree"
@@ -3309,7 +3309,7 @@ with a call to `Lock` and `Unlock` as shown on the `Inc` method.
 
 We can also use `defer` to ensure the mutex will be unlocked as in the `Value` method.
 
-```.go
+```go
 package main
 
 import (
@@ -3360,7 +3360,7 @@ Modify the `Crawl` function to fetch URLs in parallel without fetching the same 
 _Hint_: you can keep a cache of the URLs that have been fetched on a map, but maps alone are not
 safe for concurrent use!
 
-```.go
+```go
 package main
 
 import (
