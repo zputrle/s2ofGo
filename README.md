@@ -119,8 +119,11 @@ This code groups the imports into a parenthesized, "factored" import statement.
 
 You can also write multiple import statements, like:
 
+
+```
 import "fmt"
 import "math"
+```
 
 But it is good style to use the factored import statement.
 
@@ -195,11 +198,17 @@ When two or more consecutive named function parameters share a type, you can omi
 
 In this example, we shortened
 
+
+```
 x int, y int
+```
 
 to
 
+
+```
 x, y int
+```
 
 ```.go
 package main
@@ -324,6 +333,8 @@ func main() {
 
 Go's basic types are
 
+
+```
 bool
 
 string
@@ -339,6 +350,7 @@ rune // alias for int32
 float32 float64
 
 complex64 complex128
+```
 
 The example shows variables of several types,
 and also that variable declarations may be "factored" into blocks,
@@ -399,15 +411,21 @@ The expression `T(v)` converts the value `v` to the type `T`.
 
 Some numeric conversions:
 
+
+```
 var i int = 42
 var f float64 = float64(i)
 var u uint = uint(f)
+```
 
 Or, put more simply:
 
+
+```
 i := 42
 f := float64(i)
 u := uint(f)
+```
 
 Unlike in C, in Go assignment between items of different type requires an
 explicit conversion.
@@ -435,14 +453,20 @@ When declaring a variable without specifying an explicit type (either by using t
 
 When the right hand side of the declaration is typed, the new variable is of that same type:
 
+
+```
 var i int
 j := i // j is an int
+```
 
 But when the right hand side contains an untyped numeric constant, the new variable may be an `int`, `float64`, or `complex128` depending on the precision of the constant:
 
+
+```
 i := 42           // int
 f := 3.142        // float64
 g := 0.867 + 0.5i // complex128
+```
 
 Try changing the initial value of `v` in the example code and observe how its type is affected.
 
@@ -716,7 +740,10 @@ Computers typically compute the square root of x using a loop.
 Starting with some guess z, we can adjust z based on how close z² is to x,
 producing a better guess:
 
+
+```
 z -= (z*z - x) / (2*z)
+```
 
 Repeating this adjustment makes the guess better and better
 until we reach an answer that is as close to the actual square root as can be.
@@ -730,8 +757,11 @@ and how quickly the guess improves.
 Hint: To declare and initialize a floating point value,
 give it floating point syntax or use a conversion:
 
+
+```
 z := 1.0
 z := float64(1)
+```
 
 Next, change the loop condition to stop once the value has stopped
 changing (or only changes by a very small amount).
@@ -801,10 +831,13 @@ Switch cases evaluate cases from top to bottom, stopping when a case succeeds.
 
 (For example,
 
+
+```
 switch i {
 case 0:
 case f():
 }
+```
 
 does not call `f` if `i==0`.)
 
@@ -928,17 +961,26 @@ A pointer holds the memory address of a value.
 
 The type `*T` is a pointer to a `T` value. Its zero value is `nil`.
 
+
+```
 var p *int
+```
 
 The `&` operator generates a pointer to its operand.
 
+
+```
 i := 42
 p = &i
+```
 
 The `*` operator denotes the pointer's underlying value.
 
+
+```
 fmt.Println(*p) // read i through the pointer p
 *p = 21         // set i through the pointer p
+```
 
 This is known as "dereferencing" or "indirecting".
 
@@ -1065,7 +1107,10 @@ The type `[n]T` is an array of `n` values of type `T`.
 
 The expression
 
+
+```
 var a [10]int
+```
 
 declares a variable `a` as an array of ten integers.
 
@@ -1102,7 +1147,10 @@ The type `[]T` is a slice with elements of type `T`.
 A slice is formed by specifying two indices, a low and
 high bound, separated by a colon:
 
+
+```
 a[low : high]
+```
 
 This selects a half-open range which includes the first
 element, but excludes the last one.
@@ -1110,7 +1158,10 @@ element, but excludes the last one.
 The following expression creates a slice which includes
 elements 1 through 3 of `a`:
 
+
+```
 a[1:4]
+```
 
 ```.go
 package main
@@ -1165,12 +1216,18 @@ A slice literal is like an array literal without the length.
 
 This is an array literal:
 
+
+```
 [3]bool{true, true, false}
+```
 
 And this creates the same array as above,
 then builds a slice that references it:
 
+
+```
 []bool{true, true, false}
+```
 
 ```.go
 package main
@@ -1207,14 +1264,20 @@ The default is zero for the low bound and the length of the slice for the high b
 
 For the array
 
+
+```
 var a [10]int
+```
 
 these slice expressions are equivalent:
 
+
+```
 a[0:10]
 a[:10]
 a[0:]
 a[:]
+```
 
 ```.go
 package main
@@ -1308,14 +1371,20 @@ this is how you create dynamically-sized arrays.
 The `make` function allocates a zeroed array
 and returns a slice that refers to that array:
 
+
+```
 a := make([]int, 5)  // len(a)=5
+```
 
 To specify a capacity, pass a third argument to `make`:
 
+
+```
 b := make([]int, 0, 5) // len(b)=0, cap(b)=5
 
 b = b[:cap(b)] // len(b)=5, cap(b)=5
 b = b[1:]      // len(b)=4, cap(b)=4
+```
 
 ```.go
 package main
@@ -1381,7 +1450,10 @@ It is common to append new elements to a slice, and so Go provides a built-in
 `append` function. The [documentation](/pkg/builtin/#append)
 of the built-in package describes `append`.
 
+
+```
 func append(s []T, vs ...T) []T
+```
 
 The first parameter `s` of `append` is a slice of type `T`, and the rest are
 `T` values to append to the slice.
@@ -1447,12 +1519,18 @@ func main() {
 
 You can skip the index or value by assigning to `_`.
 
+
+```
 for i, _ := range pow
 for _, value := range pow
+```
 
 If you only want the index, you can omit the second variable.
 
+
+```
 for i := range pow
+```
 
 ```.go
 package main
@@ -1577,19 +1655,31 @@ func main() {
 
 Insert or update an element in map `m`:
 
+
+```
 m[key] = elem
+```
 
 Retrieve an element:
 
+
+```
 elem = m[key]
+```
 
 Delete an element:
 
+
+```
 delete(m, key)
+```
 
 Test that a key is present with a two-value assignment:
 
+
+```
 elem, ok = m[key]
+```
 
 If `key` is in `m`, `ok` is `true`. If not, `ok` is `false`.
 
@@ -1597,7 +1687,10 @@ If `key` is not in the map, then `elem` is the zero value for the map's element 
 
 *Note:* If `elem` or `ok` have not yet been declared you could use a short declaration form:
 
+
+```
 elem, ok := m[key]
+```
 
 ```.go
 package main
@@ -1936,17 +2029,23 @@ func main() {
 Comparing the previous two programs, you might notice that
 functions with a pointer argument must take a pointer:
 
+
+```
 var v Vertex
 ScaleFunc(v, 5)  // Compile error!
 ScaleFunc(&v, 5) // OK
+```
 
 while methods with pointer receivers take either a value or a pointer as the
 receiver when they are called:
 
+
+```
 var v Vertex
 v.Scale(5)  // OK
 p := &v
 p.Scale(10) // OK
+```
 
 For the statement `v.Scale(5)`, even though `v` is a value and not a pointer,
 the method with the pointer receiver is called automatically.
@@ -1991,17 +2090,23 @@ The equivalent thing happens in the reverse direction.
 
 Functions that take a value argument must take a value of that specific type:
 
+
+```
 var v Vertex
 fmt.Println(AbsFunc(v))  // OK
 fmt.Println(AbsFunc(&v)) // Compile error!
+```
 
 while methods with value receivers take either a value or a pointer as the
 receiver when they are called:
 
+
+```
 var v Vertex
 fmt.Println(v.Abs()) // OK
 p := &v
 fmt.Println(p.Abs()) // OK
+```
 
 In this case, the method call `p.Abs()` is interpreted as `(*p).Abs()`.
 
@@ -2174,7 +2279,10 @@ func main() {
 Under the hood, interface values can be thought of as a tuple of a value and a
 concrete type:
 
+
+```
 (value, type)
+```
 
 An interface value holds a value of a specific underlying concrete type.
 
@@ -2305,7 +2413,10 @@ func describe(i I) {
 
 The interface type that specifies zero methods is known as the _empty_interface_:
 
+
+```
 interface{}
+```
 
 An empty interface may hold values of any type.
 (Every type implements at least zero methods.)
@@ -2338,7 +2449,10 @@ func describe(i interface{}) {
 
 A _type_assertion_ provides access to an interface value's underlying concrete value.
 
+
+```
 t := i.(T)
+```
 
 This statement asserts that the interface value `i` holds the concrete type `T`
 and assigns the underlying `T` value to the variable `t`.
@@ -2349,7 +2463,10 @@ To _test_ whether an interface value holds a specific type,
 a type assertion can return two values: the underlying value
 and a boolean value that reports whether the assertion succeeded.
 
+
+```
 t, ok := i.(T)
+```
 
 If `i` holds a `T`, then `t` will be the underlying value and `ok` will be true.
 
@@ -2388,6 +2505,8 @@ A type switch is like a regular switch statement, but the cases in a type
 switch specify types (not values), and those values are compared against
 the type of the value held by the given interface value.
 
+
+```
 switch v := i.(type) {
 case T:
     // here v has type T
@@ -2396,6 +2515,7 @@ case S:
 default:
     // no match; here v has the same type as i
 }
+```
 
 The declaration in a type switch has the same syntax as a type assertion `i.(T)`,
 but the specific type `T` is replaced with the keyword `type`.
@@ -2434,9 +2554,12 @@ func main() {
 
 One of the most ubiquitous interfaces is [`Stringer`](/pkg/fmt/#Stringer) defined by the [`fmt`](/pkg/fmt/) package.
 
+
+```
 type Stringer interface {
     String() string
 }
+```
 
 A `Stringer` is a type that can describe itself as a string. The `fmt` package
 (and many others) look for this interface to print values.
@@ -2495,9 +2618,12 @@ Go programs express error state with `error` values.
 
 The `error` type is a built-in interface similar to `fmt.Stringer`:
 
+
+```
 type error interface {
     Error() string
 }
+```
 
 (As with `fmt.Stringer`, the `fmt` package looks for the `error` interface when
 printing values.)
@@ -2505,12 +2631,15 @@ printing values.)
 Functions often return an `error` value, and calling code should handle errors
 by testing whether the error equals `nil`.
 
+
+```
 i, err := strconv.Atoi("42")
 if err != nil {
     fmt.Printf("couldn't convert number: %v\n", err)
     return
 }
 fmt.Println("Converted integer:", i)
+```
 
 A nil `error` denotes success; a non-nil `error` denotes failure.
 
@@ -2554,11 +2683,17 @@ Copy your `Sqrt` function from the [earlier exercise](/tour/flowcontrol/8) and m
 
 Create a new type
 
+
+```
 type ErrNegativeSqrt float64
+```
 
 and make it an `error` by giving it a
 
+
+```
 func (e ErrNegativeSqrt) Error() string
+```
 
 method such that `ErrNegativeSqrt(-2).Error()` returns `"cannot`Sqrt`negative`number:`-2"`.
 
@@ -2592,7 +2727,10 @@ The Go standard library contains [many implementations](https://cs.opensource.go
 
 The `io.Reader` interface has a `Read` method:
 
+
+```
 func (T) Read(b []byte) (n int, err error)
+```
 
 `Read` populates the given byte slice with data and returns the number of bytes
 populated and an error value. It returns an `io.EOF` error when the stream
@@ -2680,6 +2818,8 @@ func main() {
 
 [Package image](/pkg/image/#Image) defines the `Image` interface:
 
+
+```
 package image
 
 type Image interface {
@@ -2687,6 +2827,7 @@ type Image interface {
     Bounds() Rectangle
     At(x, y int) color.Color
 }
+```
 
 *Note*: the `Rectangle` return value of the `Bounds` method is actually an
 [`image.Rectangle`](/pkg/image/#Rectangle), as the
@@ -2760,7 +2901,10 @@ Go functions can be written to work on multiple types using type parameters. The
 type parameters of a function appear between brackets, before the function's
 arguments.
 
+
+```
 func Index[T comparable](s []T, x T) int
+```
 
 This declaration means that `s` is a slice of any type `T` that fulfills the
 built-in constraint `comparable`. `x` is also a value of the same type.
@@ -2845,11 +2989,17 @@ You can go back to the list of [modules](/tour/list) to find what to learn next,
 
 A _goroutine_ is a lightweight thread managed by the Go runtime.
 
+
+```
 go f(x, y, z)
+```
 
 starts a new goroutine running
 
+
+```
 f(x, y, z)
+```
 
 The evaluation of `f`, `x`, `y`, and `z` happens in the current goroutine and the execution of `f` happens in the new goroutine.
 
@@ -2880,15 +3030,21 @@ func main() {
 
 Channels are a typed conduit through which you can send and receive values with the channel operator, `<-`.
 
+
+```
 ch <- v    // Send v to channel ch.
 v := <-ch  // Receive from ch, and
            // assign value to v.
+```
 
 (The data flows in the direction of the arrow.)
 
 Like maps and slices, channels must be created before use:
 
+
+```
 ch := make(chan int)
+```
 
 By default, sends and receives block until the other side is ready. This allows goroutines to synchronize without explicit locks or condition variables.
 
@@ -2924,7 +3080,10 @@ func main() {
 
 Channels can be _buffered_.  Provide the buffer length as the second argument to `make` to initialize a buffered channel:
 
+
+```
 ch := make(chan int, 100)
+```
 
 Sends to a buffered channel block only when the buffer is full. Receives block when the buffer is empty.
 
@@ -2948,7 +3107,10 @@ func main() {
 
 A sender can `close` a channel to indicate that no more values will be sent. Receivers can test whether a channel has been closed by assigning a second parameter to the receive expression: after
 
+
+```
 v, ok := <-ch
+```
 
 `ok` is `false` if there are no more values to receive and the channel is closed.
 
@@ -3026,12 +3188,15 @@ The `default` case in a `select` is run if no other case is ready.
 
 Use a `default` case to try a send or receive without blocking:
 
+
+```
 select {
 case i := <-c:
     // use i
 default:
     // receiving from c would block
 }
+```
 
 ```.go
 package main
@@ -3071,11 +3236,14 @@ A function to check whether two binary trees store the same sequence is quite co
 
 This example uses the `tree` package, which defines the type:
 
+
+```
 type Tree struct {
     Left  *Tree
     Value int
     Right *Tree
 }
+```
 
 Continue description on next page.
 
@@ -3089,7 +3257,10 @@ The function `tree.New(k)` constructs a randomly-structured (but always sorted) 
 
 Create a new channel `ch` and kick off the walker:
 
+
+```
 go Walk(tree.New(1), ch)
+```
 
 Then read and print 10 values from the channel. It should be the numbers 1, 2, 3, ..., 10.
 
