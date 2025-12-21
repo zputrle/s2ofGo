@@ -10,7 +10,7 @@
 
 ## Hello, 世界
 
-Welcome to a tour of the [Go programming language](/).
+Welcome to a tour of the [Go programming language](https://go.dev/).
 
 The tour is divided into a list of modules that you can
 access by clicking on
@@ -39,7 +39,7 @@ Edit the program and run it again.
 
 When you click on Format
 (shortcut: `Ctrl` + `Enter`), the text in the editor is formatted using the
-[gofmt](/cmd/gofmt/) tool. You can switch syntax highlighting on and off
+[gofmt](https://go.dev/cmd/gofmt/) tool. You can switch syntax highlighting on and off
 by clicking on the syntax button.
 
 When you're ready to move on, click the right arrow below or type the `PageDown` key.
@@ -176,7 +176,7 @@ In this example, `add` takes two parameters of type `int`.
 
 Notice that the type comes _after_ the variable name.
 
-(For more about why types look the way they do, see the [article on Go's declaration syntax](/blog/gos-declaration-syntax).)
+(For more about why types look the way they do, see the [article on Go's declaration syntax](https://go.dev/blog/gos-declaration-syntax).)
 
 ```go
 package main
@@ -545,7 +545,7 @@ func main() {
 
 You finished this lesson!
 
-You can go back to the list of [modules](/tour/list) to find what to learn next, or continue with the next lesson.
+You can go back to the list of [modules](https://go.dev/tour/list) to find what to learn next, or continue with the next lesson.
 
 
 
@@ -767,7 +767,7 @@ Next, change the loop condition to stop once the value has stopped
 changing (or only changes by a very small amount).
 See if that's more or fewer than 10 iterations.
 Try other initial guesses for z, like x, or x/2.
-How close are your function's results to the [math.Sqrt](/pkg/math/#Sqrt) in the standard library?
+How close are your function's results to the [math.Sqrt](https://go.dev/pkg/math/#Sqrt) in the standard library?
 
 (*Note:* If you are interested in the details of the algorithm, the z² − x above
 is how far away z² is from where it needs to be (x), and the division by 2z is the derivative
@@ -918,7 +918,7 @@ Deferred function calls are pushed onto a stack. When a function returns, its
 deferred calls are executed in last-in-first-out order.
 
 To learn more about defer statements read this
-[blog post](/blog/defer-panic-and-recover).
+[blog post](https://go.dev/blog/defer-panic-and-recover).
 
 ```go
 package main
@@ -940,7 +940,7 @@ func main() {
 
 You finished this lesson!
 
-You can go back to the list of [modules](/tour/list) to find what to learn next, or continue with the next lesson.
+You can go back to the list of [modules](https://go.dev/tour/list) to find what to learn next, or continue with the next lesson.
 
 
 
@@ -1447,7 +1447,7 @@ func main() {
 ## Appending to a slice
 
 It is common to append new elements to a slice, and so Go provides a built-in
-`append` function. The [documentation](/pkg/builtin/#append)
+`append` function. The [documentation](https://go.dev/pkg/builtin/#append)
 of the built-in package describes `append`.
 
 
@@ -1465,7 +1465,7 @@ If the backing array of `s` is too small to fit all the given values a bigger
 array will be allocated. The returned slice will point to the newly allocated
 array.
 
-(To learn more about slices, read the [Slices: usage and internals](/blog/go-slices-usage-and-internals) article.)
+(To learn more about slices, read the [Slices: usage and internals](https://go.dev/blog/go-slices-usage-and-internals) article.)
 
 ```go
 package main
@@ -1718,7 +1718,7 @@ func main() {
 
 Implement `WordCount`.  It should return a map of the counts of each “word” in the string `s`. The `wc.Test` function runs a test suite against the provided function and prints success or failure.
 
-You might find [strings.Fields](/pkg/strings/#Fields) helpful.
+You might find [strings.Fields](https://go.dev/pkg/strings/#Fields) helpful.
 
 ```go
 package main
@@ -1825,7 +1825,7 @@ func main() {
 
 You finished this lesson!
 
-You can go back to the list of [modules](/tour/list) to find what to learn next, or continue with the next lesson.
+You can go back to the list of [modules](https://go.dev/tour/list) to find what to learn next, or continue with the next lesson.
 
 
 
@@ -2552,7 +2552,7 @@ func main() {
 
 ## Stringers
 
-One of the most ubiquitous interfaces is [`Stringer`](/pkg/fmt/#Stringer) defined by the [`fmt`](/pkg/fmt/) package.
+One of the most ubiquitous interfaces is [`Stringer`](https://go.dev/pkg/fmt/#Stringer) defined by the [`fmt`](https://go.dev/pkg/fmt/) package.
 
 
 ```go
@@ -2677,7 +2677,7 @@ func main() {
 
 ## Exercise: Errors
 
-Copy your `Sqrt` function from the [earlier exercise](/tour/flowcontrol/8) and modify it to return an `error` value.
+Copy your `Sqrt` function from the [earlier exercise](https://go.dev/tour/flowcontrol/8) and modify it to return an `error` value.
 
 `Sqrt` should return a non-nil error value when given a negative number, as it doesn't support complex numbers.
 
@@ -2737,7 +2737,7 @@ populated and an error value. It returns an `io.EOF` error when the stream
 ends.
 
 The example code creates a
-[`strings.Reader`](/pkg/strings/#Reader)
+[`strings.Reader`](https://go.dev/pkg/strings/#Reader)
 and consumes its output 8 bytes at a time.
 
 ```go
@@ -2785,9 +2785,9 @@ func main() {
 
 ## Exercise: rot13Reader
 
-A common pattern is an [io.Reader](/pkg/io/#Reader) that wraps another `io.Reader`, modifying the stream in some way.
+A common pattern is an [io.Reader](https://go.dev/pkg/io/#Reader) that wraps another `io.Reader`, modifying the stream in some way.
 
-For example, the [gzip.NewReader](/pkg/compress/gzip/#NewReader) function takes an `io.Reader` (a stream of compressed data) and returns a `*gzip.Reader` that also implements `io.Reader` (a stream of the decompressed data).
+For example, the [gzip.NewReader](https://go.dev/pkg/compress/gzip/#NewReader) function takes an `io.Reader` (a stream of compressed data) and returns a `*gzip.Reader` that also implements `io.Reader` (a stream of the decompressed data).
 
 Implement a `rot13Reader` that implements `io.Reader` and reads from an `io.Reader`, modifying the stream by applying the [rot13](https://en.wikipedia.org/wiki/ROT13) substitution cipher to all alphabetical characters.
 
@@ -2816,7 +2816,7 @@ func main() {
 
 ## Images
 
-[Package image](/pkg/image/#Image) defines the `Image` interface:
+[Package image](https://go.dev/pkg/image/#Image) defines the `Image` interface:
 
 
 ```go
@@ -2830,12 +2830,12 @@ type Image interface {
 ```
 
 *Note*: the `Rectangle` return value of the `Bounds` method is actually an
-[`image.Rectangle`](/pkg/image/#Rectangle), as the
+[`image.Rectangle`](https://go.dev/pkg/image/#Rectangle), as the
 declaration is inside package `image`.
 
-(See [the documentation](/pkg/image/#Image) for all the details.)
+(See [the documentation](https://go.dev/pkg/image/#Image) for all the details.)
 
-The `color.Color` and `color.Model` types are also interfaces, but we'll ignore that by using the predefined implementations `color.RGBA` and `color.RGBAModel`. These interfaces and types are specified by the [image/color package](/pkg/image/color/).
+The `color.Color` and `color.Model` types are also interfaces, but we'll ignore that by using the predefined implementations `color.RGBA` and `color.RGBAModel`. These interfaces and types are specified by the [image/color package](https://go.dev/pkg/image/color/).
 
 ```go
 package main
@@ -2854,9 +2854,9 @@ func main() {
 
 ## Exercise: Images
 
-Remember the [picture generator](/tour/moretypes/18) you wrote earlier? Let's write another one, but this time it will return an implementation of `image.Image` instead of a slice of data.
+Remember the [picture generator](https://go.dev/tour/moretypes/18) you wrote earlier? Let's write another one, but this time it will return an implementation of `image.Image` instead of a slice of data.
 
-Define your own `Image` type, implement [the necessary methods](/pkg/image/#Image), and call `pic.ShowImage`.
+Define your own `Image` type, implement [the necessary methods](https://go.dev/pkg/image/#Image), and call `pic.ShowImage`.
 
 `Bounds` should return a `image.Rectangle`, like `image.Rect(0,`0,`w,`h)`.
 
@@ -2881,7 +2881,7 @@ func main() {
 
 You finished this lesson!
 
-You can go back to the list of [modules](/tour/list) to find what to learn next, or continue with the next lesson.
+You can go back to the list of [modules](https://go.dev/tour/list) to find what to learn next, or continue with the next lesson.
 
 
 
@@ -2971,7 +2971,7 @@ func main() {
 
 You finished this lesson!
 
-You can go back to the list of [modules](/tour/list) to find what to learn next, or continue with the next lesson.
+You can go back to the list of [modules](https://go.dev/tour/list) to find what to learn next, or continue with the next lesson.
 
 
 
@@ -3003,7 +3003,7 @@ f(x, y, z)
 
 The evaluation of `f`, `x`, `y`, and `z` happens in the current goroutine and the execution of `f` happens in the new goroutine.
 
-Goroutines run in the same address space, so access to shared memory must be synchronized. The [`sync`](/pkg/sync/) package provides useful primitives, although you won't need them much in Go as there are other primitives. (See the next slide.)
+Goroutines run in the same address space, so access to shared memory must be synchronized. The [`sync`](https://go.dev/pkg/sync/) package provides useful primitives, although you won't need them much in Go as there are other primitives. (See the next slide.)
 
 ```go
 package main
@@ -3299,7 +3299,7 @@ one goroutine can access a variable at a time to avoid conflicts?
 This concept is called _mutual_exclusion_, and the conventional name for the data structure that provides it is _mutex_.
 
 Go's standard library provides mutual exclusion with
-[`sync.Mutex`](/pkg/sync/#Mutex) and its two methods:
+[`sync.Mutex`](https://go.dev/pkg/sync/#Mutex) and its two methods:
 
 - `Lock`
 - `Unlock`
@@ -3451,33 +3451,33 @@ var fetcher = fakeFetcher{
 ## Where to Go from here...
 
 The
-[Go Documentation](/doc/) is a great place to
+[Go Documentation](https://go.dev/doc/) is a great place to
 start.
 It contains references, tutorials, videos, and more.
 
-To learn how to organize and work with Go code, read [How to Write Go Code](/doc/code).
+To learn how to organize and work with Go code, read [How to Write Go Code](https://go.dev/doc/code).
 
-If you need help with the standard library, see the [package reference](/pkg/). For help with the language itself, you might be surprised to find the [Language Spec](/ref/spec) is quite readable.
+If you need help with the standard library, see the [package reference](https://go.dev/pkg/). For help with the language itself, you might be surprised to find the [Language Spec](https://go.dev/ref/spec) is quite readable.
 
 To further explore Go's concurrency model, watch
 [Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)
-([slides](/talks/2012/concurrency.slide))
+([slides](https://go.dev/talks/2012/concurrency.slide))
 and
 [Advanced Go Concurrency Patterns](https://www.youtube.com/watch?v=QDDwwePbDtw)
-([slides](/talks/2013/advconc.slide))
+([slides](https://go.dev/talks/2013/advconc.slide))
 and read the
-[Share Memory by Communicating](/doc/codewalk/sharemem/)
+[Share Memory by Communicating](https://go.dev/doc/codewalk/sharemem/)
 codewalk.
 
 To get started writing web applications, watch
 [A simple programming environment](https://vimeo.com/53221558)
-([slides](/talks/2012/simple.slide))
+([slides](https://go.dev/talks/2012/simple.slide))
 and read the
-[Writing Web Applications](/doc/articles/wiki/) tutorial.
+[Writing Web Applications](https://go.dev/doc/articles/wiki/) tutorial.
 
-The [First Class Functions in Go](/doc/codewalk/functions/) codewalk gives an interesting perspective on Go's function types.
+The [First Class Functions in Go](https://go.dev/doc/codewalk/functions/) codewalk gives an interesting perspective on Go's function types.
 
-The [Go Blog](/blog/) has a large archive of informative Go articles.
+The [Go Blog](https://go.dev/blog/) has a large archive of informative Go articles.
 
-Visit [the Go home page](/) for more.
+Visit [the Go home page](https://go.dev/) for more.
 
