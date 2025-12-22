@@ -33,7 +33,6 @@ The tour is interactive. Click the
 Run button now
 (or press `Shift` + `Enter`) to compile and run the program on
 a remote server.
-your computer.
 The result is displayed below the code.
 
 These example programs demonstrate different aspects of Go. The programs in the tour are meant to be starting points for your own experimentation.
@@ -79,40 +78,21 @@ Click the "next" button or type `PageDown` to continue.
 ## [Go offline (optional)](https://go.dev/tour/welcome/3)
 
 This tour is also available as a stand-alone program that you can use
-without access to the internet. It builds and runs the code samples on
 your own machine.
-
 To run the tour locally, you'll need to first
-[install Go](https://go.dev/doc/install) and then run:
-
-
-```go
-go install golang.org/x/website/tour@latest
-```
-
+  go install golang.org/x/website/tour@latest
 This will place a `tour` binary in your
-[GOPATH](https://go.dev/cmd/go/#hdr-GOPATH_and_Modules)'s `bin` directory.
 When you run the tour program, it will open a web browser displaying
-your local version of the tour.
-
 Of course, you can continue to take the tour through this web site.
 
 ## [The Go Playground](https://go.dev/tour/welcome/4)
 
 This tour is built atop the [Go Playground](https://play.golang.org/), a
-web service that runs on [golang.org](https://go.dev/)'s servers.
-
 The service receives a Go program, compiles, links, and runs the program inside
-a sandbox, then returns the output.
-
 There are limitations to the programs that can be run in the playground:
-
 - In the playground the time begins at 2009-11-10 23:00:00 UTC (determining the significance of this date is an exercise for the reader). This makes it easier to cache programs by giving them deterministic output.
-
 - There are also limits on execution time and on CPU and memory usage, and the program cannot access external network hosts.
-
 The playground uses the latest stable release of Go.
-
 Read "[Inside the Go Playground](https://go.dev/blog/playground)" to learn more.
 
 ```go
@@ -949,7 +929,6 @@ case f():
 does not call `f` if `i==0`.)
 
 *Note:* Time in the Go playground always appears to start at
-2009-11-10 23:00:00 UTC, a value whose significance is left as an
 exercise for the reader.
 
 ```go
@@ -3686,13 +3665,10 @@ var fetcher = fakeFetcher{
 ## [Where to Go from here...](https://go.dev/tour/concurrency/11)
 
 You can get started by
-[installing Go](https://go.dev/doc/install/).
 
 Once you have Go installed, the
-The
 [Go Documentation](https://go.dev/doc/) is a great place to
 continue.
-start.
 It contains references, tutorials, videos, and more.
 
 To learn how to organize and work with Go code, read [How to Write Go Code](https://go.dev/doc/code).

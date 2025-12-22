@@ -33,13 +33,22 @@ func parseArticle(filename string) (*present.Doc, error) {
 	// Remove the "#appengine: " prefix from lines
 	lines := strings.Split(string(content), "\n")
 	var processed []string
+	skipNext := false
 	for _, line := range lines {
+		// Handle skipNext flag - only applies to immediate next line
+		if skipNext {
+			skipNext = false // Always reset the flag after checking one line
+			// Only skip if the immediate next line is non-empty
+			if strings.TrimSpace(line) != "" {
+				continue
+			}
+			// If empty, fall through to process it normally
+		}
+
 		if strings.HasPrefix(line, "#appengine: ") {
 			// Remove the "#appengine: " prefix (12 characters)
 			processed = append(processed, line[12:])
-		} else if strings.HasPrefix(line, "#appengine:") && len(line) == 11 {
-			// Handle lines that are just "#appengine:" without content
-			processed = append(processed, "")
+			skipNext = true
 		} else {
 			processed = append(processed, line)
 		}
