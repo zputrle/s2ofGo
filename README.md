@@ -3,6 +3,8 @@
 # Welcome!
 
 Learn how to use this tour: including how to navigate the different lessons and how to run code.
+
+
 ---
 
 ## [Hello, 世界](https://go.dev/tour/welcome/1)
@@ -82,6 +84,8 @@ you can learn about Go, or go directly to the next lesson.
 # Packages, variables, and functions.
 
 Learn the basic components of any Go program.
+
+
 ---
 
 ## [Packages](https://go.dev/tour/basics/1)
@@ -548,6 +552,8 @@ You can go back to the list of [modules](https://go.dev/tour/list) to find what 
 # Flow control statements: for, if, else, switch and defer
 
 Learn how to control the flow of your code with conditionals, loops, switches and defers.
+
+
 ---
 
 ## [For](https://go.dev/tour/flowcontrol/1)
@@ -940,6 +946,8 @@ You can go back to the list of [modules](https://go.dev/tour/list) to find what 
 # More types: structs, slices, and maps.
 
 Learn how to define types based on existing ones: this lesson covers structs, arrays, slices, and maps.
+
+
 ---
 
 ## [Pointers](https://go.dev/tour/moretypes/1)
@@ -1822,6 +1830,8 @@ You can go back to the list of [modules](https://go.dev/tour/list) to find what 
 # Methods and interfaces
 
 This lesson covers methods and interfaces, the constructs that define objects and their behavior.
+
+
 ---
 
 ## [Methods](https://go.dev/tour/methods/1)
@@ -2875,6 +2885,8 @@ You can go back to the list of [modules](https://go.dev/tour/list) to find what 
 # Generics
 
 Go supports generic programming using type parameters. This lesson shows some examples for employing generics in your code.
+
+
 ---
 
 ## [Type parameters](https://go.dev/tour/generics/1)
@@ -2962,6 +2974,8 @@ You can go back to the list of [modules](https://go.dev/tour/list) to find what 
 # Concurrency
 
 Go provides concurrency constructions as part of the core language. This lesson presents them and gives some examples on how they can be used.
+
+
 ---
 
 ## [Goroutines](https://go.dev/tour/concurrency/1)
