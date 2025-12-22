@@ -96,7 +96,7 @@ func convertToMarkdown(doc *present.Doc, articleName string) string {
 	if doc.Subtitle != "" {
 		md.WriteString("*")
 		md.WriteString(convertLinkSyntax(doc.Subtitle))
-		md.WriteString("*\n\n")
+		md.WriteString("*\n")
 	}
 
 	// Author
@@ -118,7 +118,7 @@ func convertToMarkdown(doc *present.Doc, articleName string) string {
 	// Sections
 	for i, section := range doc.Sections {
 
-		goPageUrl := fmt.Spritnf("%s/%s/%d", goDevUrlPrefix, aname, i+1)
+		goPageUrl := fmt.Sprintf("%s/%s/%d", goDevUrlPrefix, aname, i+1)
 
 		md.WriteString("## ")
 		md.WriteString(fmt.Sprintf("[%s](%s)", section.Title, goPageUrl))
