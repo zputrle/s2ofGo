@@ -39,7 +39,14 @@ func parseArticle(filename string) (*present.Doc, error) {
 		if strings.HasPrefix(line, "#appengine:") {
 
 			// Remove the "#appengine:" prefix (11 characters)
-			processed = append(processed,  strings.TrimSpace(line[11:]))
+
+			if len(line) == 11{
+				processed = append(processed,  "\n")
+			} else {
+				// Skip the following space if present
+				processed = append(processed,  line[12:])
+			}
+
 			skipNext = true
 
 		} else {

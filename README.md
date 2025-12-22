@@ -84,7 +84,10 @@ your own machine.
 To run the tour locally, you'll need to first
 [install Go](https://go.dev/doc/install) and then run:
 
+
+```go
 go install golang.org/x/website/tour@latest
+```
 
 This will place a `tour` binary in your
 [GOPATH](https://go.dev/cmd/go/#hdr-GOPATH_and_Modules)'s `bin` directory.
