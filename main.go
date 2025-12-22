@@ -23,13 +23,31 @@ var articles []string = []string{
 
 func parseArticle(filename string) (*present.Doc, error) {
 
-	file, err := os.Open(filename)
+	// Read the file content
+	content, err := os.ReadFile(filename)
 	if err != nil {
 		return nil, err
 	}
-	defer file.Close()
 
-	doc, err := present.Parse(file, filename, 0)
+	// Preprocess to include #appengine sections
+	// Remove the "#appengine: " prefix from lines
+	lines := strings.Split(string(content), "\n")
+	var processed []string
+	for _, line := range lines {
+		if strings.HasPrefix(line, "#appengine: ") {
+			// Remove the "#appengine: " prefix (12 characters)
+			processed = append(processed, line[12:])
+		} else if strings.HasPrefix(line, "#appengine:") && len(line) == 11 {
+			// Handle lines that are just "#appengine:" without content
+			processed = append(processed, "")
+		} else {
+			processed = append(processed, line)
+		}
+	}
+	processedContent := strings.Join(processed, "\n")
+
+	// Parse the preprocessed content
+	doc, err := present.Parse(strings.NewReader(processedContent), filename, 0)
 	if err != nil {
 		return nil, err
 	}
@@ -173,6 +191,8 @@ func main() {
 	var combinedMarkdown strings.Builder
 
 	combinedMarkdown.WriteString("*[A Tour of Go](https://go.dev/tour/welcome/1) on a single web page to easily find what you want to recall.*\n\n")
+
+	combinedMarkdown.WriteString("Note: if you want to run the code, you can click on a section heading, which will redirect you to the corresponding part of A Tour of Go where you can run the code.\n\n")
 
 	combinedMarkdown.WriteString("This adaptation of [A Tour of Go](https://go.dev/tour/welcome/1) is in compliance with the BSD license under which the original is distributed ([LICENSE](https://cs.opensource.google/go/x/website/+/master:LICENSE)).\n\n")
 

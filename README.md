@@ -1,5 +1,7 @@
 *[A Tour of Go](https://go.dev/tour/welcome/1) on a single web page to easily find what you want to recall.*
 
+Note: if you want to run the code, you can click on a section heading, which will redirect you to the corresponding part of A Tour of Go where you can run the code.
+
 This adaptation of [A Tour of Go](https://go.dev/tour/welcome/1) is in compliance with the BSD license under which the original is distributed ([LICENSE](https://cs.opensource.google/go/x/website/+/master:LICENSE)).
 
 # Welcome!
@@ -30,6 +32,7 @@ You can navigate through them using
 The tour is interactive. Click the
 Run button now
 (or press `Shift` + `Enter`) to compile and run the program on
+a remote server.
 your computer.
 The result is displayed below the code.
 
@@ -71,7 +74,61 @@ The tour is available in other languages:
 
 Click the "next" button or type `PageDown` to continue.
 
-## [Congratulations](https://go.dev/tour/welcome/3)
+## [Go offline (optional)](https://go.dev/tour/welcome/3)
+
+This tour is also available as a stand-alone program that you can use
+without access to the internet. It builds and runs the code samples on
+your own machine.
+
+To run the tour locally, you'll need to first
+[install Go](https://go.dev/doc/install) and then run:
+
+
+```go
+go install golang.org/x/website/tour@latest
+```
+
+This will place a `tour` binary in your
+[GOPATH](https://go.dev/cmd/go/#hdr-GOPATH_and_Modules)'s `bin` directory.
+When you run the tour program, it will open a web browser displaying
+your local version of the tour.
+
+Of course, you can continue to take the tour through this web site.
+
+## [The Go Playground](https://go.dev/tour/welcome/4)
+
+This tour is built atop the [Go Playground](https://play.golang.org/), a
+web service that runs on [golang.org](https://go.dev/)'s servers.
+
+The service receives a Go program, compiles, links, and runs the program inside
+a sandbox, then returns the output.
+
+There are limitations to the programs that can be run in the playground:
+
+- In the playground the time begins at 2009-11-10 23:00:00 UTC (determining the significance of this date is an exercise for the reader). This makes it easier to cache programs by giving them deterministic output.
+
+- There are also limits on execution time and on CPU and memory usage, and the program cannot access external network hosts.
+
+The playground uses the latest stable release of Go.
+
+Read "[Inside the Go Playground](https://go.dev/blog/playground)" to learn more.
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	fmt.Println("Welcome to the playground!")
+
+	fmt.Println("The time is", time.Now())
+}
+```
+
+## [Congratulations](https://go.dev/tour/welcome/5)
 
 You've finished the first module of the tour!
 
@@ -836,6 +893,10 @@ case f():
 ```
 
 does not call `f` if `i==0`.)
+
+*Note:* Time in the Go playground always appears to start at
+2009-11-10 23:00:00 UTC, a value whose significance is left as an
+exercise for the reader.
 
 ```go
 package main
@@ -3438,8 +3499,13 @@ var fetcher = fakeFetcher{
 
 ## [Where to Go from here...](https://go.dev/tour/concurrency/11)
 
+You can get started by
+[installing Go](https://go.dev/doc/install/).
+
+Once you have Go installed, the
 The
 [Go Documentation](https://go.dev/doc/) is a great place to
+continue.
 start.
 It contains references, tutorials, videos, and more.
 
