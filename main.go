@@ -172,7 +172,9 @@ func main() {
 	outputFile := "README.md"
 	var combinedMarkdown strings.Builder
 
-	combinedMarkdown.WriteString("[A Tour of Go](https://go.dev/tour/welcome/1) on a single web page to easily find what you want to recall.\n\n")
+	combinedMarkdown.WriteString("*[A Tour of Go](https://go.dev/tour/welcome/1) on a single web page to easily find what you want to recall.*\n\n")
+
+	combinedMarkdown.WriteString("This adaptation of [A Tour of Go](https://go.dev/tour/welcome/1) is in compliance with the BSD license under which the original is distributed ([LICENSE](https://cs.opensource.google/go/x/website/+/master:LICENSE)).\n\n")
 
 	for i, articleName := range articles {
 		inputFile := "website/_content/tour/" + articleName
