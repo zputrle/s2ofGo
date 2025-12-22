@@ -165,12 +165,15 @@ func convertToMarkdown(doc *present.Doc, articleName string) string {
 
 			case present.Code:
 				// Include the filename if available
-				if e.FileName != "" {
-					md.WriteString("**")
-					md.WriteString(e.FileName)
-					md.WriteString(":**\n")
-				}
+
 				md.WriteString("```go\n")
+
+				if e.FileName != "" {
+					md.WriteString("/*")
+					md.WriteString(e.FileName)
+					md.WriteString("*/\n\n")
+				}
+
 				md.Write(e.Raw)
 				if len(e.Raw) > 0 && e.Raw[len(e.Raw)-1] != '\n' {
 					md.WriteString("\n")
