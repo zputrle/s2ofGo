@@ -35,21 +35,23 @@ func parseArticle(filename string) (*present.Doc, error) {
 	var processed []string
 	skipNext := false
 	for _, line := range lines {
-		// Handle skipNext flag - only applies to immediate next line
-		if skipNext {
-			skipNext = false // Always reset the flag after checking one line
-			// Only skip if the immediate next line is non-empty
-			if strings.TrimSpace(line) != "" {
-				continue
-			}
-			// If empty, fall through to process it normally
-		}
 
 		if strings.HasPrefix(line, "#appengine: ") {
+
 			// Remove the "#appengine: " prefix (12 characters)
 			processed = append(processed, line[12:])
 			skipNext = true
+
 		} else {
+
+			if skipNext {
+				skipNext = false
+				if strings.TrimSpace(line) != "" {
+					continue
+				}
+				// If empty, fall through to process it normally
+			}
+
 			processed = append(processed, line)
 		}
 	}
