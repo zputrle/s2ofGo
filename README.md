@@ -2,13 +2,10 @@
 
 # Welcome!
 
-**Learn how to use this tour: including how to navigate the different lessons and how to run code.**
-
-*Author: The Go Authors*
-
+Learn how to use this tour: including how to navigate the different lessons and how to run code.
 ---
 
-## Hello, 世界
+## [Hello, 世界](https://go.dev/tour/welcome/1)
 
 Welcome to a tour of the [Go programming language](https://go.dev/).
 
@@ -54,7 +51,7 @@ func main() {
 }
 ```
 
-## Go local
+## [Go local](https://go.dev/tour/welcome/2)
 
 The tour is available in other languages:
 
@@ -71,7 +68,7 @@ The tour is available in other languages:
 
 Click the "next" button or type `PageDown` to continue.
 
-## Congratulations
+## [Congratulations](https://go.dev/tour/welcome/3)
 
 You've finished the first module of the tour!
 
@@ -84,13 +81,10 @@ you can learn about Go, or go directly to the next lesson.
 
 # Packages, variables, and functions.
 
-**Learn the basic components of any Go program.**
-
-*Author: The Go Authors*
-
+Learn the basic components of any Go program.
 ---
 
-## Packages
+## [Packages](https://go.dev/tour/basics/1)
 
 Every Go program is made up of packages.
 
@@ -113,7 +107,7 @@ func main() {
 }
 ```
 
-## Imports
+## [Imports](https://go.dev/tour/basics/2)
 
 This code groups the imports into a parenthesized, "factored" import statement.
 
@@ -140,7 +134,7 @@ func main() {
 }
 ```
 
-## Exported names
+## [Exported names](https://go.dev/tour/basics/3)
 
 In Go, a name is exported if it begins with a capital letter.
 For example, `Pizza` is an exported name, as is `Pi`, which is exported from
@@ -168,7 +162,7 @@ func main() {
 }
 ```
 
-## Functions
+## [Functions](https://go.dev/tour/basics/4)
 
 A function can take zero or more arguments.
 
@@ -192,7 +186,7 @@ func main() {
 }
 ```
 
-## Functions continued
+## [Functions continued](https://go.dev/tour/basics/5)
 
 When two or more consecutive named function parameters share a type, you can omit the type from all but the last.
 
@@ -224,7 +218,7 @@ func main() {
 }
 ```
 
-## Multiple results
+## [Multiple results](https://go.dev/tour/basics/6)
 
 A function can return any number of results.
 
@@ -245,7 +239,7 @@ func main() {
 }
 ```
 
-## Named return values
+## [Named return values](https://go.dev/tour/basics/7)
 
 Go's return values may be named. If so, they are treated as variables defined at the top of the function.
 
@@ -271,7 +265,7 @@ func main() {
 }
 ```
 
-## Variables
+## [Variables](https://go.dev/tour/basics/8)
 
 The `var` statement declares a list of variables; as in function argument lists, the type is last.
 
@@ -290,7 +284,7 @@ func main() {
 }
 ```
 
-## Variables with initializers
+## [Variables with initializers](https://go.dev/tour/basics/9)
 
 A var declaration can include initializers, one per variable.
 
@@ -309,7 +303,7 @@ func main() {
 }
 ```
 
-## Short variable declarations
+## [Short variable declarations](https://go.dev/tour/basics/10)
 
 Inside a function, the `:=` short assignment statement can be used in place of a `var` declaration with implicit type.
 
@@ -329,7 +323,7 @@ func main() {
 }
 ```
 
-## Basic types
+## [Basic types](https://go.dev/tour/basics/11)
 
 Go's basic types are
 
@@ -380,7 +374,7 @@ func main() {
 }
 ```
 
-## Zero values
+## [Zero values](https://go.dev/tour/basics/12)
 
 Variables declared without an explicit initial value are given their
 _zero_value_.
@@ -405,7 +399,7 @@ func main() {
 }
 ```
 
-## Type conversions
+## [Type conversions](https://go.dev/tour/basics/13)
 
 The expression `T(v)` converts the value `v` to the type `T`.
 
@@ -447,7 +441,7 @@ func main() {
 }
 ```
 
-## Type inference
+## [Type inference](https://go.dev/tour/basics/14)
 
 When declaring a variable without specifying an explicit type (either by using the `:=` syntax or `var`=` expression syntax), the variable's type is inferred from the value on the right hand side.
 
@@ -481,7 +475,7 @@ func main() {
 }
 ```
 
-## Constants
+## [Constants](https://go.dev/tour/basics/15)
 
 Constants are declared like variables, but with the `const` keyword.
 
@@ -506,7 +500,7 @@ func main() {
 }
 ```
 
-## Numeric Constants
+## [Numeric Constants](https://go.dev/tour/basics/16)
 
 Numeric constants are high-precision _values_.
 
@@ -541,7 +535,7 @@ func main() {
 }
 ```
 
-## Congratulations!
+## [Congratulations!](https://go.dev/tour/basics/17)
 
 You finished this lesson!
 
@@ -553,13 +547,10 @@ You can go back to the list of [modules](https://go.dev/tour/list) to find what 
 
 # Flow control statements: for, if, else, switch and defer
 
-**Learn how to control the flow of your code with conditionals, loops, switches and defers.**
-
-*Author: The Go Authors*
-
+Learn how to control the flow of your code with conditionals, loops, switches and defers.
 ---
 
-## For
+## [For](https://go.dev/tour/flowcontrol/1)
 
 Go has only one looping construct, the `for` loop.
 
@@ -593,7 +584,7 @@ func main() {
 }
 ```
 
-## For continued
+## [For continued](https://go.dev/tour/flowcontrol/2)
 
 The init and post statements are optional.
 
@@ -611,7 +602,7 @@ func main() {
 }
 ```
 
-## For is Go's "while"
+## [For is Go's "while"](https://go.dev/tour/flowcontrol/3)
 
 At that point you can drop the semicolons: C's `while` is spelled `for` in Go.
 
@@ -629,7 +620,7 @@ func main() {
 }
 ```
 
-## Forever
+## [Forever](https://go.dev/tour/flowcontrol/4)
 
 If you omit the loop condition it loops forever, so an infinite loop is compactly expressed.
 
@@ -642,7 +633,7 @@ func main() {
 }
 ```
 
-## If
+## [If](https://go.dev/tour/flowcontrol/5)
 
 Go's `if` statements are like its `for` loops; the expression need not be
 surrounded by parentheses `(`)` but the braces `{`}` are required.
@@ -667,7 +658,7 @@ func main() {
 }
 ```
 
-## If with a short statement
+## [If with a short statement](https://go.dev/tour/flowcontrol/6)
 
 Like `for`, the `if` statement can start with a short statement to execute before the condition.
 
@@ -698,7 +689,7 @@ func main() {
 }
 ```
 
-## If and else
+## [If and else](https://go.dev/tour/flowcontrol/7)
 
 Variables declared inside an `if` short statement are also available inside any
 of the `else` blocks.
@@ -732,7 +723,7 @@ func main() {
 }
 ```
 
-## Exercise: Loops and Functions
+## [Exercise: Loops and Functions](https://go.dev/tour/flowcontrol/8)
 
 As a way to play with functions and loops, let's implement a square root function: given a number x, we want to find the number z for which z² is most nearly x.
 
@@ -790,7 +781,7 @@ func main() {
 }
 ```
 
-## Switch
+## [Switch](https://go.dev/tour/flowcontrol/9)
 
 A `switch` statement is a shorter way to write a sequence of `if`-`else` statements.
 It runs the first case whose value is equal to the condition expression.
@@ -825,7 +816,7 @@ func main() {
 }
 ```
 
-## Switch evaluation order
+## [Switch evaluation order](https://go.dev/tour/flowcontrol/10)
 
 Switch cases evaluate cases from top to bottom, stopping when a case succeeds.
 
@@ -865,7 +856,7 @@ func main() {
 }
 ```
 
-## Switch with no condition
+## [Switch with no condition](https://go.dev/tour/flowcontrol/11)
 
 Switch without a condition is the same as `switch`true`.
 
@@ -892,7 +883,7 @@ func main() {
 }
 ```
 
-## Defer
+## [Defer](https://go.dev/tour/flowcontrol/12)
 
 A defer statement defers the execution of a function until the surrounding
 function returns.
@@ -912,7 +903,7 @@ func main() {
 }
 ```
 
-## Stacking defers
+## [Stacking defers](https://go.dev/tour/flowcontrol/13)
 
 Deferred function calls are pushed onto a stack. When a function returns, its
 deferred calls are executed in last-in-first-out order.
@@ -936,7 +927,7 @@ func main() {
 }
 ```
 
-## Congratulations!
+## [Congratulations!](https://go.dev/tour/flowcontrol/14)
 
 You finished this lesson!
 
@@ -948,13 +939,10 @@ You can go back to the list of [modules](https://go.dev/tour/list) to find what 
 
 # More types: structs, slices, and maps.
 
-**Learn how to define types based on existing ones: this lesson covers structs, arrays, slices, and maps.**
-
-*Author: The Go Authors*
-
+Learn how to define types based on existing ones: this lesson covers structs, arrays, slices, and maps.
 ---
 
-## Pointers
+## [Pointers](https://go.dev/tour/moretypes/1)
 
 Go has pointers.
 A pointer holds the memory address of a value.
@@ -1005,7 +993,7 @@ func main() {
 }
 ```
 
-## Structs
+## [Structs](https://go.dev/tour/moretypes/2)
 
 A `struct` is a collection of fields.
 
@@ -1024,7 +1012,7 @@ func main() {
 }
 ```
 
-## Struct Fields
+## [Struct Fields](https://go.dev/tour/moretypes/3)
 
 Struct fields are accessed using a dot.
 
@@ -1045,7 +1033,7 @@ func main() {
 }
 ```
 
-## Pointers to structs
+## [Pointers to structs](https://go.dev/tour/moretypes/4)
 
 Struct fields can be accessed through a struct pointer.
 
@@ -1072,7 +1060,7 @@ func main() {
 }
 ```
 
-## Struct Literals
+## [Struct Literals](https://go.dev/tour/moretypes/5)
 
 A struct literal denotes a newly allocated struct value by listing the values of its fields.
 
@@ -1101,7 +1089,7 @@ func main() {
 }
 ```
 
-## Arrays
+## [Arrays](https://go.dev/tour/moretypes/6)
 
 The type `[n]T` is an array of `n` values of type `T`.
 
@@ -1135,7 +1123,7 @@ func main() {
 }
 ```
 
-## Slices
+## [Slices](https://go.dev/tour/moretypes/7)
 
 An array has a fixed size.
 A slice, on the other hand, is a dynamically-sized,
@@ -1176,7 +1164,7 @@ func main() {
 }
 ```
 
-## Slices are like references to arrays
+## [Slices are like references to arrays](https://go.dev/tour/moretypes/8)
 
 A slice does not store any data,
 it just describes a section of an underlying array.
@@ -1210,7 +1198,7 @@ func main() {
 }
 ```
 
-## Slice literals
+## [Slice literals](https://go.dev/tour/moretypes/9)
 
 A slice literal is like an array literal without the length.
 
@@ -1256,7 +1244,7 @@ func main() {
 }
 ```
 
-## Slice defaults
+## [Slice defaults](https://go.dev/tour/moretypes/10)
 
 When slicing, you may omit the high or low bounds to use their defaults instead.
 
@@ -1298,7 +1286,7 @@ func main() {
 }
 ```
 
-## Slice length and capacity
+## [Slice length and capacity](https://go.dev/tour/moretypes/11)
 
 A slice has both a _length_ and a _capacity_.
 
@@ -1342,7 +1330,7 @@ func printSlice(s []int) {
 }
 ```
 
-## Nil slices
+## [Nil slices](https://go.dev/tour/moretypes/12)
 
 The zero value of a slice is `nil`.
 
@@ -1363,7 +1351,7 @@ func main() {
 }
 ```
 
-## Creating a slice with make
+## [Creating a slice with make](https://go.dev/tour/moretypes/13)
 
 Slices can be created with the built-in `make` function;
 this is how you create dynamically-sized arrays.
@@ -1411,7 +1399,7 @@ func printSlice(s string, x []int) {
 }
 ```
 
-## Slices of slices
+## [Slices of slices](https://go.dev/tour/moretypes/14)
 
 Slices can contain any type, including other slices.
 
@@ -1444,7 +1432,7 @@ func main() {
 }
 ```
 
-## Appending to a slice
+## [Appending to a slice](https://go.dev/tour/moretypes/15)
 
 It is common to append new elements to a slice, and so Go provides a built-in
 `append` function. The [documentation](https://go.dev/pkg/builtin/#append)
@@ -1494,7 +1482,7 @@ func printSlice(s []int) {
 }
 ```
 
-## Range
+## [Range](https://go.dev/tour/moretypes/16)
 
 The `range` form of the `for` loop iterates over a slice or map.
 
@@ -1515,7 +1503,7 @@ func main() {
 }
 ```
 
-## Range continued
+## [Range continued](https://go.dev/tour/moretypes/17)
 
 You can skip the index or value by assigning to `_`.
 
@@ -1548,7 +1536,7 @@ func main() {
 }
 ```
 
-## Exercise: Slices
+## [Exercise: Slices](https://go.dev/tour/moretypes/18)
 
 Implement `Pic`. It should return a slice of length `dy`, each element of which is a slice of `dx` 8-bit unsigned integers. When you run the program, it will display your picture, interpreting the integers as grayscale (well, bluescale) values.
 
@@ -1571,7 +1559,7 @@ func main() {
 }
 ```
 
-## Maps
+## [Maps](https://go.dev/tour/moretypes/19)
 
 A map maps keys to values.
 
@@ -1601,7 +1589,7 @@ func main() {
 }
 ```
 
-## Map literals
+## [Map literals](https://go.dev/tour/moretypes/20)
 
 Map literals are like struct literals, but the keys are required.
 
@@ -1628,7 +1616,7 @@ func main() {
 }
 ```
 
-## Map literals continued
+## [Map literals continued](https://go.dev/tour/moretypes/21)
 
 If the top-level type is just a type name, you can omit it from the elements of the literal.
 
@@ -1651,7 +1639,7 @@ func main() {
 }
 ```
 
-## Mutating Maps
+## [Mutating Maps](https://go.dev/tour/moretypes/22)
 
 Insert or update an element in map `m`:
 
@@ -1714,7 +1702,7 @@ func main() {
 }
 ```
 
-## Exercise: Maps
+## [Exercise: Maps](https://go.dev/tour/moretypes/23)
 
 Implement `WordCount`.  It should return a map of the counts of each “word” in the string `s`. The `wc.Test` function runs a test suite against the provided function and prints success or failure.
 
@@ -1736,7 +1724,7 @@ func main() {
 }
 ```
 
-## Function values
+## [Function values](https://go.dev/tour/moretypes/24)
 
 Functions are values too. They can be passed around just like other values.
 
@@ -1765,7 +1753,7 @@ func main() {
 }
 ```
 
-## Function closures
+## [Function closures](https://go.dev/tour/moretypes/25)
 
 Go functions may be closures. A closure is a function value that references variables from outside its body. The function may access and assign to the referenced variables; in this sense the function is "bound" to the variables.
 
@@ -1795,7 +1783,7 @@ func main() {
 }
 ```
 
-## Exercise: Fibonacci closure
+## [Exercise: Fibonacci closure](https://go.dev/tour/moretypes/26)
 
 Let's have some fun with functions.
 
@@ -1821,7 +1809,7 @@ func main() {
 }
 ```
 
-## Congratulations!
+## [Congratulations!](https://go.dev/tour/moretypes/27)
 
 You finished this lesson!
 
@@ -1833,13 +1821,10 @@ You can go back to the list of [modules](https://go.dev/tour/list) to find what 
 
 # Methods and interfaces
 
-**This lesson covers methods and interfaces, the constructs that define objects and their behavior.**
-
-*Author: The Go Authors*
-
+This lesson covers methods and interfaces, the constructs that define objects and their behavior.
 ---
 
-## Methods
+## [Methods](https://go.dev/tour/methods/1)
 
 Go does not have classes.
 However, you can define methods on types.
@@ -1873,7 +1858,7 @@ func main() {
 }
 ```
 
-## Methods are functions
+## [Methods are functions](https://go.dev/tour/methods/2)
 
 Remember: a method is just a function with a receiver argument.
 
@@ -1901,7 +1886,7 @@ func main() {
 }
 ```
 
-## Methods continued
+## [Methods continued](https://go.dev/tour/methods/3)
 
 You can declare a method on non-struct types, too.
 
@@ -1935,7 +1920,7 @@ func main() {
 }
 ```
 
-## Pointer receivers
+## [Pointer receivers](https://go.dev/tour/methods/4)
 
 You can declare methods with pointer receivers.
 
@@ -1986,7 +1971,7 @@ func main() {
 }
 ```
 
-## Pointers and functions
+## [Pointers and functions](https://go.dev/tour/methods/5)
 
 Here we see the `Abs` and `Scale` methods rewritten as functions.
 
@@ -2024,7 +2009,7 @@ func main() {
 }
 ```
 
-## Methods and pointer indirection
+## [Methods and pointer indirection](https://go.dev/tour/methods/6)
 
 Comparing the previous two programs, you might notice that
 functions with a pointer argument must take a pointer:
@@ -2084,7 +2069,7 @@ func main() {
 }
 ```
 
-## Methods and pointer indirection (2)
+## [Methods and pointer indirection (2)](https://go.dev/tour/methods/7)
 
 The equivalent thing happens in the reverse direction.
 
@@ -2141,7 +2126,7 @@ func main() {
 }
 ```
 
-## Choosing a value or pointer receiver
+## [Choosing a value or pointer receiver](https://go.dev/tour/methods/8)
 
 There are two reasons to use a pointer receiver.
 
@@ -2186,7 +2171,7 @@ func main() {
 }
 ```
 
-## Interfaces
+## [Interfaces](https://go.dev/tour/methods/9)
 
 An _interface_type_ is defined as a set of method signatures.
 
@@ -2241,7 +2226,7 @@ func (v *Vertex) Abs() float64 {
 }
 ```
 
-## Interfaces are implemented implicitly
+## [Interfaces are implemented implicitly](https://go.dev/tour/methods/10)
 
 A type implements an interface by implementing its methods.
 There is no explicit declaration of intent, no "implements" keyword.
@@ -2274,7 +2259,7 @@ func main() {
 }
 ```
 
-## Interface values
+## [Interface values](https://go.dev/tour/methods/11)
 
 Under the hood, interface values can be thought of as a tuple of a value and a
 concrete type:
@@ -2332,7 +2317,7 @@ func describe(i I) {
 }
 ```
 
-## Interface values with nil underlying values
+## [Interface values with nil underlying values](https://go.dev/tour/methods/12)
 
 If the concrete value inside the interface itself is nil,
 the method will be called with a nil receiver.
@@ -2382,7 +2367,7 @@ func describe(i I) {
 }
 ```
 
-## Nil interface values
+## [Nil interface values](https://go.dev/tour/methods/13)
 
 A nil interface value holds neither value nor concrete type.
 
@@ -2409,7 +2394,7 @@ func describe(i I) {
 }
 ```
 
-## The empty interface
+## [The empty interface](https://go.dev/tour/methods/14)
 
 The interface type that specifies zero methods is known as the _empty_interface_:
 
@@ -2445,7 +2430,7 @@ func describe(i interface{}) {
 }
 ```
 
-## Type assertions
+## [Type assertions](https://go.dev/tour/methods/15)
 
 A _type_assertion_ provides access to an interface value's underlying concrete value.
 
@@ -2497,7 +2482,7 @@ func main() {
 }
 ```
 
-## Type switches
+## [Type switches](https://go.dev/tour/methods/16)
 
 A _type_switch_ is a construct that permits several type assertions in series.
 
@@ -2550,7 +2535,7 @@ func main() {
 }
 ```
 
-## Stringers
+## [Stringers](https://go.dev/tour/methods/17)
 
 One of the most ubiquitous interfaces is [`Stringer`](https://go.dev/pkg/fmt/#Stringer) defined by the [`fmt`](https://go.dev/pkg/fmt/) package.
 
@@ -2585,7 +2570,7 @@ func main() {
 }
 ```
 
-## Exercise: Stringers
+## [Exercise: Stringers](https://go.dev/tour/methods/18)
 
 Make the `IPAddr` type implement `fmt.Stringer` to print the address as
 a dotted quad.
@@ -2612,7 +2597,7 @@ func main() {
 }
 ```
 
-## Errors
+## [Errors](https://go.dev/tour/methods/19)
 
 Go programs express error state with `error` values.
 
@@ -2675,7 +2660,7 @@ func main() {
 }
 ```
 
-## Exercise: Errors
+## [Exercise: Errors](https://go.dev/tour/methods/20)
 
 Copy your `Sqrt` function from the [earlier exercise](https://go.dev/tour/flowcontrol/8) and modify it to return an `error` value.
 
@@ -2718,7 +2703,7 @@ func main() {
 }
 ```
 
-## Readers
+## [Readers](https://go.dev/tour/methods/21)
 
 The `io` package specifies the `io.Reader` interface,
 which represents the read end of a stream of data.
@@ -2764,7 +2749,7 @@ func main() {
 }
 ```
 
-## Exercise: Readers
+## [Exercise: Readers](https://go.dev/tour/methods/22)
 
 Implement a `Reader` type that emits an infinite stream of the ASCII character
 `'A'`.
@@ -2783,7 +2768,7 @@ func main() {
 }
 ```
 
-## Exercise: rot13Reader
+## [Exercise: rot13Reader](https://go.dev/tour/methods/23)
 
 A common pattern is an [io.Reader](https://go.dev/pkg/io/#Reader) that wraps another `io.Reader`, modifying the stream in some way.
 
@@ -2814,7 +2799,7 @@ func main() {
 }
 ```
 
-## Images
+## [Images](https://go.dev/tour/methods/24)
 
 [Package image](https://go.dev/pkg/image/#Image) defines the `Image` interface:
 
@@ -2852,7 +2837,7 @@ func main() {
 }
 ```
 
-## Exercise: Images
+## [Exercise: Images](https://go.dev/tour/methods/25)
 
 Remember the [picture generator](https://go.dev/tour/moretypes/18) you wrote earlier? Let's write another one, but this time it will return an implementation of `image.Image` instead of a slice of data.
 
@@ -2877,7 +2862,7 @@ func main() {
 }
 ```
 
-## Congratulations!
+## [Congratulations!](https://go.dev/tour/methods/26)
 
 You finished this lesson!
 
@@ -2889,13 +2874,10 @@ You can go back to the list of [modules](https://go.dev/tour/list) to find what 
 
 # Generics
 
-**Go supports generic programming using type parameters. This lesson shows some examples for employing generics in your code.**
-
-*Author: The Go Authors*
-
+Go supports generic programming using type parameters. This lesson shows some examples for employing generics in your code.
 ---
 
-## Type parameters
+## [Type parameters](https://go.dev/tour/generics/1)
 
 Go functions can be written to work on multiple types using type parameters. The
 type parameters of a function appear between brackets, before the function's
@@ -2942,7 +2924,7 @@ func main() {
 }
 ```
 
-## Generic types
+## [Generic types](https://go.dev/tour/generics/2)
 
 In addition to generic functions, Go also supports generic types. A type can
 be parameterized with a type parameter, which could be useful for implementing
@@ -2967,7 +2949,7 @@ func main() {
 }
 ```
 
-## Congratulations!
+## [Congratulations!](https://go.dev/tour/generics/3)
 
 You finished this lesson!
 
@@ -2979,13 +2961,10 @@ You can go back to the list of [modules](https://go.dev/tour/list) to find what 
 
 # Concurrency
 
-**Go provides concurrency constructions as part of the core language. This lesson presents them and gives some examples on how they can be used.**
-
-*Author: The Go Authors*
-
+Go provides concurrency constructions as part of the core language. This lesson presents them and gives some examples on how they can be used.
 ---
 
-## Goroutines
+## [Goroutines](https://go.dev/tour/concurrency/1)
 
 A _goroutine_ is a lightweight thread managed by the Go runtime.
 
@@ -3026,7 +3005,7 @@ func main() {
 }
 ```
 
-## Channels
+## [Channels](https://go.dev/tour/concurrency/2)
 
 Channels are a typed conduit through which you can send and receive values with the channel operator, `<-`.
 
@@ -3076,7 +3055,7 @@ func main() {
 }
 ```
 
-## Buffered Channels
+## [Buffered Channels](https://go.dev/tour/concurrency/3)
 
 Channels can be _buffered_.  Provide the buffer length as the second argument to `make` to initialize a buffered channel:
 
@@ -3103,7 +3082,7 @@ func main() {
 }
 ```
 
-## Range and Close
+## [Range and Close](https://go.dev/tour/concurrency/4)
 
 A sender can `close` a channel to indicate that no more values will be sent. Receivers can test whether a channel has been closed by assigning a second parameter to the receive expression: after
 
@@ -3145,7 +3124,7 @@ func main() {
 }
 ```
 
-## Select
+## [Select](https://go.dev/tour/concurrency/5)
 
 The `select` statement lets a goroutine wait on multiple communication operations.
 
@@ -3182,7 +3161,7 @@ func main() {
 }
 ```
 
-## Default Selection
+## [Default Selection](https://go.dev/tour/concurrency/6)
 
 The `default` case in a `select` is run if no other case is ready.
 
@@ -3228,7 +3207,7 @@ func main() {
 }
 ```
 
-## Exercise: Equivalent Binary Trees
+## [Exercise: Equivalent Binary Trees](https://go.dev/tour/concurrency/7)
 
 There can be many different binary trees with the same sequence of values stored in it. For example, here are two binary trees storing the sequence 1, 1, 2, 3, 5, 8, 13.
 
@@ -3247,7 +3226,7 @@ type Tree struct {
 
 Continue description on next page.
 
-## Exercise: Equivalent Binary Trees
+## [Exercise: Equivalent Binary Trees](https://go.dev/tour/concurrency/8)
 
 *1.* Implement the `Walk` function.
 
@@ -3289,7 +3268,7 @@ func main() {
 }
 ```
 
-## sync.Mutex
+## [sync.Mutex](https://go.dev/tour/concurrency/9)
 
 We've seen how channels are great for communication among goroutines.
 
@@ -3351,7 +3330,7 @@ func main() {
 }
 ```
 
-## Exercise: Web Crawler
+## [Exercise: Web Crawler](https://go.dev/tour/concurrency/10)
 
 In this exercise you'll use Go's concurrency features to parallelize a web crawler.
 
@@ -3448,7 +3427,7 @@ var fetcher = fakeFetcher{
 }
 ```
 
-## Where to Go from here...
+## [Where to Go from here...](https://go.dev/tour/concurrency/11)
 
 The
 [Go Documentation](https://go.dev/doc/) is a great place to
