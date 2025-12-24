@@ -73,6 +73,19 @@ func parseArticle(filename string) (*present.Doc, error) {
 	return doc, nil
 }
 
+func removeBackticksInInlineCode(text string) string {
+	// Pattern: space + backtick + content + backtick + space
+	// Replace any backticks inside the content with spaces
+	re := regexp.MustCompile(" `(.+?)` ")
+	return re.ReplaceAllStringFunc(text, func(match string) string {
+		// Extract content between backticks (skip first 2 chars: space+backtick, and last 2: backtick+space)
+		content := match[2 : len(match)-2]
+		// Replace backticks with spaces
+		cleanedContent := strings.ReplaceAll(content, "`", " ")
+		return fmt.Sprintf(" `%s` ", cleanedContent)
+	})
+}
+
 func convertLinkSyntax(text string) string {
 
 	// Convert [[url][text]] to [text](url)
@@ -95,7 +108,10 @@ func convertLinkSyntax(text string) string {
 	})
 
 	// Remove JavaScript links entirely
-	return removeJavaScriptLinks(converted)
+	converted = removeJavaScriptLinks(converted)
+
+	// Replace backticks inside inline code blocks with spaces
+	return removeBackticksInInlineCode(converted)
 }
 
 func isRelativeLink(url string) bool {
@@ -187,9 +203,9 @@ func convertToMarkdown(doc *present.Doc, articleName string) string {
 				md.WriteString("```go\n")
 
 				if e.FileName != "" {
-					md.WriteString("/*")
+					md.WriteString("/* ")
 					md.WriteString(e.FileName)
-					md.WriteString("*/\n\n")
+					md.WriteString(" */\n\n")
 				}
 
 				md.Write(e.Raw)
