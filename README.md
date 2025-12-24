@@ -156,7 +156,7 @@ Programs start running in package `main`.
 
 This program is using the packages with import paths `"fmt"` and `"math/rand"`.
 
-By convention, the package name is the same as the last element of the import path. For instance, the `"math/rand"` package comprises files that begin with the statement `package`rand`.
+By convention, the package name is the same as the last element of the import path. For instance, the `"math/rand"` package comprises files that begin with the statement `package rand`.
 
 ```go
 /* packages.go */
@@ -389,7 +389,7 @@ func main() {
 
 Inside a function, the `:=` short assignment statement can be used in place of a `var` declaration with implicit type.
 
-Outside a function, every statement begins with a keyword (`var`, `func , and so on) and so the  :=` construct is not available.
+Outside a function, every statement begins with a keyword (`var`, `func`, and so on) and so the `:=` construct is not available.
 
 ```go
 /* short-variable-declarations.go */
@@ -434,7 +434,7 @@ The example shows variables of several types,
 and also that variable declarations may be "factored" into blocks,
 as with import statements.
 
-The `int ,  uint , and  uintptr` types are usually 32 bits wide on 32-bit systems and 64 bits wide on 64-bit systems.
+The `int`, `uint`, and `uintptr` types are usually 32 bits wide on 32-bit systems and 64 bits wide on 64-bit systems.
 When you need an integer value you should use `int` unless you have a specific reason to use a sized or unsigned integer type.
 
 ```go
@@ -543,7 +543,7 @@ var i int
 j := i // j is an int
 ```
 
-But when the right hand side contains an untyped numeric constant, the new variable may be an `int ,  float64 , or  complex128` depending on the precision of the constant:
+But when the right hand side contains an untyped numeric constant, the new variable may be an `int`, `float64`, or `complex128` depending on the precision of the constant:
 
 
 ```go
@@ -767,7 +767,7 @@ func main() {
 
 ## [If with a short statement](https://go.dev/tour/flowcontrol/6)
 
-Like `for , the  if` statement can start with a short statement to execute before the condition.
+Like `for`, the `if` statement can start with a short statement to execute before the condition.
 
 Variables declared by the statement are only in scope until the end of the `if`.
 
@@ -979,7 +979,7 @@ func main() {
 
 ## [Switch with no condition](https://go.dev/tour/flowcontrol/11)
 
-Switch without a condition is the same as `switch`true`.
+Switch without a condition is the same as `switch true`.
 
 This construct can be a clean way to write long if-then-else chains.
 
@@ -1700,7 +1700,7 @@ func main() {
 
 ## [Exercise: Slices](https://go.dev/tour/moretypes/18)
 
-Implement `Pic . It should return a slice of length  dy , each element of which is a slice of  dx` 8-bit unsigned integers. When you run the program, it will display your picture, interpreting the integers as grayscale (well, bluescale) values.
+Implement `Pic`. It should return a slice of length `dy`, each element of which is a slice of `dx` 8-bit unsigned integers. When you run the program, it will display your picture, interpreting the integers as grayscale (well, bluescale) values.
 
 The choice of image is up to you. Interesting functions include `(x+y)/2`, `x*y`, and `x^y`.
 
@@ -1839,7 +1839,7 @@ Test that a key is present with a two-value assignment:
 elem, ok = m[key]
 ```
 
-If `key` is in `m ,  ok` is `true . If not,  ok` is `false`.
+If `key` is in `m`, `ok` is `true`. If not, `ok` is `false`.
 
 If `key` is not in the map, then `elem` is the zero value for the map's element type.
 
@@ -1876,7 +1876,7 @@ func main() {
 
 ## [Exercise: Maps](https://go.dev/tour/moretypes/23)
 
-Implement `WordCount .  It should return a map of the counts of each “word” in the string  s . The  wc.Test` function runs a test suite against the provided function and prints success or failure.
+Implement `WordCount`.  It should return a map of the counts of each “word” in the string `s`. The `wc.Test` function runs a test suite against the provided function and prints success or failure.
 
 You might find [strings.Fields](https://go.dev/pkg/strings/#Fields) helpful.
 
@@ -2223,7 +2223,7 @@ p := &v
 p.Scale(10) // OK
 ```
 
-For the statement `v.Scale(5) , even though  v` is a value and not a pointer,
+For the statement `v.Scale(5)`, even though `v` is a value and not a pointer,
 the method with the pointer receiver is called automatically.
 That is, as a convenience, Go interprets the statement `v.Scale(5)` as
 `(&v).Scale(5)` since the `Scale` method has a pointer receiver.
@@ -2662,7 +2662,7 @@ and a boolean value that reports whether the assertion succeeded.
 t, ok := i.(T)
 ```
 
-If `i` holds a `T , then  t` will be the underlying value and `ok` will be true.
+If `i` holds a `T`, then `t` will be the underlying value and `ok` will be true.
 
 If not, `ok` will be false and `t` will be the zero value of type `T`,
 and no panic occurs.
@@ -2827,7 +2827,7 @@ type error interface {
 }
 ```
 
-(As with `fmt.Stringer , the  fmt` package looks for the `error` interface when
+(As with `fmt.Stringer`, the `fmt` package looks for the `error` interface when
 printing values.)
 
 Functions often return an `error` value, and calling code should handle errors
@@ -2899,7 +2899,7 @@ and make it an `error` by giving it a
 func (e ErrNegativeSqrt) Error() string
 ```
 
-method such that `ErrNegativeSqrt(-2).Error()` returns `"cannot`Sqrt`negative`number:`-2"`.
+method such that `ErrNegativeSqrt(-2).Error()` returns `"cannot Sqrt negative number: -2"`.
 
 *Note:* A call to `fmt.Sprint(e)` inside the `Error` method will send the program into an infinite loop. You can avoid this by converting `e` first: `fmt.Sprint(float64(e))`. Why?
 
@@ -3072,7 +3072,7 @@ Remember the [picture generator](https://go.dev/tour/moretypes/18) you wrote ear
 
 Define your own `Image` type, implement [the necessary methods](https://go.dev/pkg/image/#Image), and call `pic.ShowImage`.
 
-`Bounds` should return a `image.Rectangle`, like `image.Rect(0,`0,`w,`h)`.
+`Bounds` should return a `image.Rectangle`, like `image.Rect(0, 0, w, h)`.
 
 `ColorModel` should return `color.RGBAModel`.
 
@@ -3121,7 +3121,7 @@ func Index[T comparable](s []T, x T) int
 ```
 
 This declaration means that `s` is a slice of any type `T` that fulfills the
-built-in constraint `comparable .  x` is also a value of the same type.
+built-in constraint `comparable`. `x` is also a value of the same type.
 
 `comparable` is a useful constraint that makes it possible to use the `==` and
 `!=` operators on values of the type. In this example, we use it to compare a
@@ -3217,7 +3217,7 @@ starts a new goroutine running
 f(x, y, z)
 ```
 
-The evaluation of `f ,  x ,  y , and  z` happens in the current goroutine and the execution of `f` happens in the new goroutine.
+The evaluation of `f`, `x`, `y`, and `z` happens in the current goroutine and the execution of `f` happens in the new goroutine.
 
 Goroutines run in the same address space, so access to shared memory must be synchronized. The [`sync`](https://go.dev/pkg/sync/) package provides useful primitives, although you won't need them much in Go as there are other primitives. (See the next slide.)
 
@@ -3496,7 +3496,7 @@ Then read and print 10 values from the channel. It should be the numbers 1, 2, 3
 
 *4.* Test the `Same` function.
 
-`Same(tree.New(1),`tree.New(1))` should return true, and `Same(tree.New(1), tree.New(2))` should return false.
+`Same(tree.New(1), tree.New(1))` should return true, and `Same(tree.New(1), tree.New(2))` should return false.
 
 The documentation for `Tree` can be found [here](https://godoc.org/golang.org/x/tour/tree#Tree).
 

@@ -74,15 +74,17 @@ func parseArticle(filename string) (*present.Doc, error) {
 }
 
 func removeBackticksInInlineCode(text string) string {
-	// Pattern: space + backtick + content + backtick + space
+	// Pattern: (optional space) + backtick + content + backtick + (space|comma|dot)
 	// Replace any backticks inside the content with spaces
-	re := regexp.MustCompile(" `(.+?)` ")
+	re := regexp.MustCompile("( ?)`(.+?)`([ ,.])")
 	return re.ReplaceAllStringFunc(text, func(match string) string {
-		// Extract content between backticks (skip first 2 chars: space+backtick, and last 2: backtick+space)
-		content := match[2 : len(match)-2]
+		submatches := re.FindStringSubmatch(match)
+		leadingSpace := submatches[1] // captured optional space
+		content := submatches[2]       // captured content between backticks
+		delimiter := submatches[3]     // captured delimiter
 		// Replace backticks with spaces
 		cleanedContent := strings.ReplaceAll(content, "`", " ")
-		return fmt.Sprintf(" `%s` ", cleanedContent)
+		return fmt.Sprintf("%s`%s`%s", leadingSpace, cleanedContent, delimiter)
 	})
 }
 
