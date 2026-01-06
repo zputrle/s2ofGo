@@ -20,8 +20,13 @@ if [[ "$LAST_GEN_COMMIT" != "$LAST_COMMIT" ||
 	  "$BUILD_ANYWAY" -eq 1 ]]; then
 	echo "Generating README.md ..."
 	set -x
-	rm -rf website/
-	git clone https://go.googlesource.com/website
+	rm -rf tour/
+	#git clone https://go.googlesource.com/website
+	mkdir tour
+	cd tour
+	wget https://go.googlesource.com/website/+archive/refs/heads/master/_content/tour.tar.gz
+	tar xf tour.tar.gz
+	cd ..
 	go run .
 else 
 	echo "Nothing to do."
