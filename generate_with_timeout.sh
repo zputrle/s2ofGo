@@ -1,6 +1,6 @@
 #!/bin/bash
 
-timeout -k 5s 25s ./generate.sh "$@"
+timeout -k 5s 55s ./generate.sh "$@"
 
 if [ $? -eq 124 ]; then
     echo "Command timed out!"
