@@ -6,6 +6,8 @@ DATE=$(date -u)
 
 echo "Running generate.sh ($APP_VERSION) at $DATE ..."
 
+echo "GIT_AUTHOR_NAME = $GIT_AUTHOR_NAME"
+
 BUILD_ANYWAY=0
 SKIP_COMMIT=0
 if [[ "$1" == "-f" ]]; then

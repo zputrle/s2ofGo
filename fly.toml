@@ -1,20 +1,7 @@
-# fly.toml app configuration file generated for s2ofgo on 2026-01-11T15:08:48+01:00
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
-
 app = 's2ofgo'
 primary_region = 'fra'
-
-[build]
 
 [[vm]]
   memory = '512mb'
   cpus = 1
   memory_mb = 512
-
-[env]
-  GIT_AUTHOR_NAME="zputrle auto-commit"
-  GIT_AUTHOR_EMAIL="contact@zputrle.com"
-  GIT_COMMITTER_NAME="zputrle auto-commit"
-  GIT_COMMITTER_EMAIL="contact@zputrle.com"
