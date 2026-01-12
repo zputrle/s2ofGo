@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP_VERSION="v0.1"
+APP_VERSION="v0.1.1"
 
 DATE=$(date -u)
 
