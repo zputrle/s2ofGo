@@ -13,11 +13,8 @@ primary_region = 'fra'
   cpus = 1
   memory_mb = 512
 
-[schedule]
-  interval = "hourly"
-
 [env]
-	GIT_AUTHOR_NAME="zputrle auto-commit"
-	GIT_AUTHOR_EMAIL="contact@zputrle.com"
-	GIT_COMMITTER_NAME="zputrle auto-commit"
-	GIT_COMMITTER_EMAIL="contact@zputrle.com"
+  GIT_AUTHOR_NAME="zputrle auto-commit"
+  GIT_AUTHOR_EMAIL="contact@zputrle.com"
+  GIT_COMMITTER_NAME="zputrle auto-commit"
+  GIT_COMMITTER_EMAIL="contact@zputrle.com"
