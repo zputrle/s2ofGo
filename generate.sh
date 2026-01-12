@@ -17,6 +17,10 @@ if [[ "$2" == "-f" ]]; then
 	BUILD_ANYWAY=1
 fi
 
+# Pull changes from GitHub repo.
+git remote set-url origin https://$GITHUB_TOKEN@github.com/zputrle/s2ofGo.git
+git pull origin
+
 # Last commit to the SRC_URL.
 SRC_URL=https://go.googlesource.com/website
 LAST_COMMIT=$(git ls-remote $SRC_URL master | awk '{print $1;}')
@@ -72,5 +76,4 @@ git add last_run.txt
 
 git commit -m "Auto-commit by generate.sh"
 
-git remote set-url origin https://$GITHUB_TOKEN@github.com/zputrle/s2ofGo.git
 git push origin
