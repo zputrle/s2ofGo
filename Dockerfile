@@ -14,9 +14,9 @@ USER root
 RUN chown -R guser:guser /app
 USER guser
 
-RUN export GIT_AUTHOR_EMAIL='contact@zputrle.com'
-RUN export GIT_AUTHOR_NAME='zputrle auto-commit'
-RUN export GIT_COMMITTER_EMAIL='contact@zputrle.com'
-RUN export GIT_COMMITTER_NAME='zputrle auto-commit'
+ENV GIT_AUTHOR_EMAIL='contact@zputrle.com'
+ENV GIT_AUTHOR_NAME='zputrle auto-commit'
+ENV GIT_COMMITTER_EMAIL='contact@zputrle.com'
+ENV GIT_COMMITTER_NAME='zputrle auto-commit'
 
-ENTRYPOINT ["./generate_with_timeout.sh", "-s"]
+ENTRYPOINT ["./generate_with_timeout.sh"]
