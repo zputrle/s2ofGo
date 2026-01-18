@@ -19,9 +19,11 @@ if [[ "$2" == "-f" ]]; then
 	BUILD_ANYWAY=1
 fi
 
-# Pull changes from GitHub repo.
-git remote set-url origin https://$GITHUB_TOKEN@github.com/zputrle/s2ofGo.git
-git pull origin
+if [[ "$SKIP_COMMIT" -eq 1 ]]; then
+	# Pull changes from GitHub repo.
+	git remote set-url origin https://$GITHUB_TOKEN@github.com/zputrle/s2ofGo.git
+	git pull origin
+fi
 
 # Last commit to the SRC_URL.
 SRC_URL=https://go.googlesource.com/website
