@@ -1,8 +1,10 @@
 *[A Tour of Go](https://go.dev/tour/welcome/1) on a single web page to easily find what you want to recall.*
 
+This adaptation of [A Tour of Go](https://go.dev/tour/welcome/1) is in compliance with the BSD license under which the original is distributed ([LICENSE](https://cs.opensource.google/go/x/website/+/master:LICENSE)).
+
 **Note:** if you want to run the code, you can click on a section heading, which will redirect you to the corresponding part of A Tour of Go where you can run the code.
 
-This adaptation of [A Tour of Go](https://go.dev/tour/welcome/1) is in compliance with the BSD license under which the original is distributed ([LICENSE](https://cs.opensource.google/go/x/website/+/master:LICENSE)).
+View the page as a [Markdown file](https://github.com/zputrle/s2ofGo/blob/main/README.md).
 
 # Welcome!
 
