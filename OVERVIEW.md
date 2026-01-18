@@ -11,7 +11,7 @@ Since A Tour of Go is not often updated, we could run the script only occasional
 </p>
 <p align="center">Figure 1: High-level architecture</p>
 
-The Fly Machine does not preserve state during runs. The only thing the `generate.sh` needs to remember is the last commit from which the README.md is generated, and that is stored in the s2ofGo repository alongside README.md. This way we avoid storing any state on fly.io which makes the management of the setup easier.
+The Fly Machine does not preserve state during runs. The only thing the `generate.sh` needs to remember is the last commit from which the README.md was generated, and that is stored in the s2ofGo repository alongside README.md. This way we avoid storing any state on Fly.io which simplifies the setup.
 
 **Cost**: Since we use a Fly Machine with a single core and 512 MB of memory, and the machine is stopped most of the time, the running cost should be less than 1 EUR per month. Additionally, to ensure that the machine is not running continuously, we limit its runtime by automatically stopping the `generate.sh` script after 3 minutes using the `timeout` command. This way, even if the `generate.sh` script hangs, the machine will only run for 3 minutes per day.
 
