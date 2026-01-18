@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-Sun Jan 18 12:39:46 UTC 2026 - v0.1.1
-=======
-Sun Jan 18 12:41:32 PM UTC 2026 - v0.1.1
->>>>>>> e1068ee (Update README.md)
+Sun Jan 18 12:46:34 UTC 2026 - v0.1.1
