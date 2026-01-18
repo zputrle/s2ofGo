@@ -19,7 +19,7 @@ if [[ "$2" == "-f" ]]; then
 	BUILD_ANYWAY=1
 fi
 
-if [[ "$SKIP_COMMIT" -eq 1 ]]; then
+if [[ "$SKIP_COMMIT" -eq 0 ]]; then
 	# Pull changes from GitHub repo.
 	git remote set-url origin https://$GITHUB_TOKEN@github.com/zputrle/s2ofGo.git
 	git pull origin
