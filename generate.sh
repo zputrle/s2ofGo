@@ -22,6 +22,7 @@ fi
 if [[ "$SKIP_COMMIT" -eq 0 ]]; then
 	# Pull changes from GitHub repo.
 	git remote set-url origin https://$GITHUB_TOKEN@github.com/zputrle/s2ofGo.git
+	git status
 	git pull origin
 fi
 
